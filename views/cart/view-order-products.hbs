@@ -1,0 +1,26 @@
+<section class="pt-5">
+    <div class="container">
+        <div>
+            <div class="row pt-5">
+      {{#each products}}
+      <div class="col-12 col-sm-6  col-md-4 col-lg-3 ">
+        <div class="cardBg mb-5 ">
+           
+            <img class="img-responsive cardImage" src="/products-images/{{this.item}}m-art.jpg"
+              alt="Order product image">
+        
+          <div class="card-body">
+            <h5 class="card-title ">{{this.product.ProductName}}</h5>
+            <p class="card-text">Category : {{this.product.Category}}</p>
+            <p class="card-text">Quantity : {{this.quantity}}</p>
+            <h1 class="proPrice text-end">₹ {{this.product.Price}} x {{this.quantity}}</h1>
+
+          </div>
+        </div>
+      </div>
+      {{/each}}
+
+    </div>
+        </div>
+    </div>
+</section>

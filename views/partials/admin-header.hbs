@@ -1,0 +1,56 @@
+<div id="mySidenav" class="sidenav">
+    <h6 class="  AdminPanel ">Admin Panel</h6>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+    <a class="float-left mb-5" href="/admin"><img class="" src="/images/mushroom white.png" alt="logo"
+            width="150px"></a>
+            
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action mb-1 " href="/admin"><i class="glyphicon glyphicon-dashboard"></i>
+            Dashboard</a>
+        <a class="list-group-item list-group-item-action mb-1 " href="/admin/edit-pages"><i
+                class="glyphicon glyphicon-pencil"></i> Edit pages</a>
+        <a class="list-group-item list-group-item-action mb-1 " href="/admin/all-products"><i
+                class="glyphicon glyphicon-list"></i> All product</a>
+        <a class="list-group-item list-group-item-action mb-1 " href="/admin/pending-products"><i class="bi bi-file-earmark-ppt-fill"></i> Penting products</a>
+        <a class="list-group-item list-group-item-action mb-1 " href="/admin/all-artist"><i class="glyphicon glyphicon-leaf"></i> All
+            artist</a>
+        <a class="list-group-item list-group-item-action mb-1 " href="/admin/all-users"><i class="glyphicon glyphicon-user"></i> All
+            users</a>
+        <a class="list-group-item list-group-item-action mb-1 " href="/admin/all-orders"><i class="glyphicon glyphicon-shopping-cart"></i>
+            All orders</a>
+        <a class="list-group-item list-group-item-action mb-1" href="/admin/settings"><i class="glyphicon glyphicon-cog"></i> Settings</a>
+        
+
+    </div>
+</div>
+
+<div class="sticky-top" id="main">
+    <div class="sidebarheader">
+
+        <div class="col-md-6 col-xs-4">
+            <button class="btn btn-primary" style="cursor:pointer" onclick="openNav()">&#9776; Menubar</button>
+            
+        </div>
+        <div class="  col-md-6 col-xs-8 mt-2">
+            <a href="/admin"><img class="headerBarnd" src="/images/mushroom white.png" alt="logo" width="150px"></a>
+            
+        </div>
+    </div>
+
+</div>
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+    </script>

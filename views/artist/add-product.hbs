@@ -1,0 +1,229 @@
+<section>
+    <div class="sidebarContent">
+        <div class="sidebarcontentDiv">
+            <div class="pt-4">
+                                    <h4 class="ArAcBodyItemHeader "><i class="bi bi-bag-plus-fill"></i> Add Products</h4>
+
+
+
+                    <form action="/artist/dashboard/add-product" method="POST" onsubmit="return checkaInput()"
+                        enctype="multipart/form-data" id="artistSettingsform">
+                        <div class="ArAcSettFormBody">
+
+
+
+                            <div class="ArAcSettings  row">
+                                <label class="">Product title</label>
+                                <div class="">
+                                    <input type="text" class="form-control" name="ProductName" id="productname">
+                                    <i class="glyphicon glyphicon-info-sign"></i>
+                                    <i class="glyphicon glyphicon-ok-sign "></i>
+                                    <small>Error massage</small>
+                                </div>
+                            </div>
+
+                            <label>Category</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="Category" id="eexamplecategory"
+                                    value="For Drowing">
+                                <label class="form-check-label" for="examplecategory">
+                                    Drowing Model
+                                </label>
+                            </div>
+                            <div>
+                                <input class="form-check-input " type="radio" name="Category" id="examplecategory"
+                                    value="For Sales" checked>
+                                <label class="form-check-label" for="examplecategory">
+                                    For Sales
+                                </label>
+                            </div>
+
+                            <div class="ArAcSettings  row">
+                                <label class="">Description</label>
+                                <div class="">
+                                    <textarea type="text" class="form-control" name="Description" id="description"
+                                        minlength="15" ></textarea>
+                                    <i class="glyphicon glyphicon-info-sign"></i>
+                                    <i class="glyphicon glyphicon-ok-sign "></i>
+                                    <small>Error massage</small>
+                                </div>
+                            </div>
+                           
+                               
+                            
+                           
+                            <div class="ArAcSettings  row">
+                                <label class="">Price (₹)</label>
+                                <div class="">
+                                    <input type="number" class="form-control" name="Price" id="price" placeholder="This not fixed Price, Admin can check this price">
+                                    <i class="glyphicon glyphicon-info-sign"></i>
+                                    <i class="glyphicon glyphicon-ok-sign "></i>
+                               
+      
+                                </div>
+                            </div>
+
+                            <
+                            <div class="">
+                               
+                                    <input type="text" class="form-control" name="ArId" value="{{artist.ArId}}" hidden>
+                                    <input type="text" name="Status" value="Pending" class="form-control" hidden>
+                              
+                            </div>
+                            <div class="pb-3">
+                                <label class="">Product Images</label><br>
+                                <img class="ArAcSettFormImag mb-2" src=""
+                                    id="profileview" alt="user profile image" 
+                                    onerror="this.onerror=null;callfun(this);">
+
+                                <div class="ArAcSettings row ">
+
+                                    <div class="">
+                                        <input class="form-control-file pt-3" type="file" name="Image" id="profile"
+                                            onchange="viewImage(event)" accept="image/jpg, image/jpeg">
+                                        <h5>Profile Maximum width : 700px, height : 700px and size : 5 MB</h5>
+                                        <i class="glyphicon glyphicon-info-sign"></i>
+                                        <i class="glyphicon glyphicon-ok-sign "></i>
+                                        <small>Error massage</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ArAcSettFormBody">
+                            
+                            <div class="useraccForm">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+    function showsidebar() {
+        document.getElementById("sidebarartist").style.marginLeft = "0";
+        document.getElementById("sidebarartist").onclick = "colsesidebar()";
+    }
+</script>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+<script>
+    var header = document.getElementById("v-pills-tab");
+    var btns = header.getElementsByClassName("ArDslist-group-item");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+</script>
+
+
+<script>
+
+    const form = document.getElementById('artistSettingsform');
+    const productname = document.getElementById('productname');
+    const description = document.getElementById('description');
+   // const arid = document.getElementById('arid');
+    const price = document.getElementById('price');
+
+
+
+        function viewImage(event) {
+
+            if (event.target.files && event.target.files[0]) {
+                const file = event.target.files[0];
+                const profileValue = profile.value;
+
+                const maxFileSize = 3145728; // 3 MB
+                const maxWidth = 700;
+                const maxHeight = 700;
+
+
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+                img.onload = () => {
+                    if (file.size > maxFileSize) {
+                        setErrorFor(profile, 'The selected image file is too big. Please choose one that is smaller than 3 MB.');
+                        //  alert('The selected image file is too big. Please choose one that is smaller than 3 MB.'); //
+                    } else if (file.type.match('image.jpg') && file.type.match('image.jpeg')) {
+                        setErrorFor(profile, 'This not jpg/jpeg file.');
+                        // alert('this not jpg/jpeg file')
+                    } else if (file.type.match('image.*') && (img.width > maxWidth || img.height > maxHeight)) {
+                        setErrorFor(profile, 'The selected image is too big. Please choose one with maximum dimensions of 700 px x 700 px.');
+                        // alert(`The selected image is too big. Please choose one with maximum dimensions of ${maxWidth} px x${maxHeight} px.`);
+                    } else {
+
+                        document.getElementById('profileview').src = URL.createObjectURL(event.target.files[0]),setSuccessFor(profile);
+
+                        event.target.nodeName === 'INPUT'
+                        
+                            ? (event.target.form.querySelector("input[type='submit']").disabled = false)
+                            : event.target.submit();
+                    }
+                };
+            }
+        };
+
+
+
+
+
+    function checkaInput() {
+
+        const productnameValue = productname.value;
+        const descriptionValue = description.value;
+      //  const aridValue = arid.value;
+        const priceValue = price.value;
+
+        if (productnameValue === '') {
+            setErrorFor(productname, 'Enter Product title');
+            return false;
+        } else {
+            setSuccessFor(productname);
+        }
+
+        if (descriptionValue === '') {
+            setErrorFor(description, 'Enter Description');
+            return false;
+        } else {
+            setSuccessFor(description);
+        }
+
+        if (priceValue === '') {
+            setErrorFor(price, 'Enter Product price/value');
+            return false;
+        } else {
+            setSuccessFor(price);
+        }
+
+
+
+    }
+
+    function setErrorFor(input, message) {
+        const ArAcSettings = input.parentElement;
+        const small = ArAcSettings.querySelector('small');
+        ArAcSettings.className = 'ArAcSettings error';
+        small.innerText = message;
+    }
+
+    function setSuccessFor(input) {
+        const ArAcSettings = input.parentElement;
+        ArAcSettings.className = 'ArAcSettings success';
+    }
+</script>

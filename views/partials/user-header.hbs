@@ -1,0 +1,91 @@
+<nav class="navbar navbar-fixed-top  " style=" background-color:#405d27;">
+    <div class=" col-6 col-lg-2 mt-2 ">
+
+        <a class="float-left" href="/"><img src="/images/mushroom white.png" alt="logo" width="150px"></a>
+        <br>
+
+    </div>
+    <div class="  col-lg-7 d-none d-sm-none d-md-none d-lg-block">
+        <div class="">
+            <form>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button class="btn btn-light border-right    dropdown-toggle" type="button" id="searchitems"
+                            data-toggle="dropdown">
+                            All category
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="searchitems">
+                            <a class="dropdown-item " href="#">All category</a>
+                            <li class="divider"></li>
+                            <a class="dropdown-item" href="#">Artist</a>
+                            <li class="divider"></li>
+                            <a class="dropdown-item" href="#">for Purchase</a>
+                            <a class="dropdown-item" href="#">for Drowing</a>
+                        </div>
+                    </div>
+
+                    <input type="text" class="form-control" placeholder="search here...">
+                    <div class="input-group-btn">
+
+                        <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i>
+                            Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="  col-6 col-lg-2">
+        <div class="d-flex justify-content-around ">
+            <div class="p-2  d-lg-none  "><span style="color: white; " class="glyphicon glyphicon-search  "></span>
+            </div>
+            <div style="color: white;" class="p-2 ">
+
+
+                <img style="border-radius: 100%;" width="20px" height="20px" class="dropdown-toggle" id="useritems" data-toggle="dropdown"
+                    src="/user-images/{{user._id}}.jpg" alt="" onerror="this.onerror=null;callfun(this);">
+                
+                <div style="display: inline;" class="d-none  d-sm-inline">
+                {{#if user}}
+                 {{user.UserName}}
+                {{else}}
+                 ACCOUNT
+                {{/if}}
+                </div>
+                
+
+
+                <div class="dropdown-menu" aria-labelledby="useritems">
+                    {{#if user}}
+                    <a class="dropdown-item" href="/account">Account</a>
+
+                    <a class="dropdown-item" href="/my-orders">My Orders</a>
+
+                  
+                    <li class="divider"></li>
+                    <a class="dropdown-item" href="/logout">LogOut</a>
+                    {{else}}
+                    <a class="dropdown-item" href="/signup">Create Account</a>
+                    <a class="dropdown-item" href="/login">Login</a>
+                    {{/if}}
+
+                </div>
+            </div>
+            <div class="p-2 "><a href="/cart"><span style="color:white; "
+                        class="glyphicon glyphicon-shopping-cart   "><span class="badge align-start">{{cartCount}}</span></span></a>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>

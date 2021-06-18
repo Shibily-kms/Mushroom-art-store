@@ -1,0 +1,326 @@
+<section class="">
+    <div class="container">
+        <div>
+            <h2 class="text-center  allproductsheader">Edit Pages</h2>
+        </div>
+        <div class="row">
+            <div class="panel-group " id="accrodin">
+
+            
+                {{!-- panel Two --}}
+                <div class="panel">
+                    <div class="row headingpanelbg ">
+                        <div class="col-xs-6 ">
+                            <h4 class="headingpanel">Carowsel List</h4>
+                        </div>
+                        <div class="col-xs-6 ">
+                            <a class="hedingpanelbtn" data-toggle="collapse" data-parent="#accrodin" href="#panel04">
+                                view/close
+                            </a>
+                        </div>
+                    </div>
+                    <div id="panel04" class="panel-collapse collapse">
+                        <div class="panel-body panelSection">
+                            <table class="table ">
+                                <thead class="bg-dark text-light">
+                                    <tr>
+
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Link</th>
+                                        <th>Edit</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each allcarowsel }}
+                                    <tr>
+
+                                        <td><img style="width: 50px; hight:50px;"
+                                                src="/carowsel-images/{{this._id}}.jpg" alt="image"></td>
+                                        <td>{{this.link}}</td>
+                                        <td>
+                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#{{this._id}}">Eidt</a>
+                                        </td>
+
+
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {{!-- panel Three --}}
+                <div class="panel">
+                    <div class="row headingpanelbg ">
+                        <div class="col-xs-6 ">
+                            <h4 class="headingpanel">Add Products</h4>
+                        </div>
+                        <div class="col-xs-6 ">
+                            <a class="hedingpanelbtn" data-toggle="collapse" data-parent="#accrodin" href="#panel02">
+                                view/close
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="panel02" class="panel-collapse collapse ">
+                        <div class="panel-body panelSection">
+                            <span>Click Green button for add new products </span>
+                            <a class="btn btn-success" href="/admin/add-products">Create new product</a>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- panel Three --}}
+                <div class="panel">
+                    <div class="row headingpanelbg ">
+                        <div class="col-xs-6 ">
+                            <h4 class="headingpanel">fist panel</h4>
+                        </div>
+                        <div class="col-xs-6 ">
+                            <a class="hedingpanelbtn" data-toggle="collapse" data-parent="#accrodin" href="#panel03">
+                                view/close
+                            </a>
+                        </div>
+                    </div>
+                    <div id="panel03" class="panel-collapse collapse ">
+                        <div class="panel-body panelSection">
+                            By keeping all these questions in our mind today we have come up with a new topic called “A
+                            Guide on Paragraph Writing”. With this guide, we’ll try to answer all these questions about
+                            paragraph writing. Paragraphs act as the main role in a student’s life. While writing any
+                            topic
+                            in an exam or competition needs paras to explain the concept in an understandable way for
+                            the
+                            readers.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="60c5d8cc406cb72d3c95ea96" role="dialog">
+    <div  class="modal-dialog modal-lg">
+        <div  class="modal-content">
+            <div class="modal-header EditCarouseHeader ">
+                <h4 class="modal-title">Edit carousel</h4>
+                <button type="button" class="EditCarosuseCloseButton" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body EidtCarouselBody">
+                <form action="/admin/edit-carowsel" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <img style="width: 250px;" class="c" src="/carowsel-images/60c5d8cc406cb72d3c95ea96.jpg" id="imgView" alt="carowsel">
+                    </div>
+                    <input type="text" name="id" value="60c5d8cc406cb72d3c95ea96" hidden>
+                    <div class="form-group">
+                        <label for="carowselImage">Choose carousel</label>
+                        <input type="file" class="form-control-file" onchange="viewImage(event)"  accept="image/jpg, image/jpeg" name="CarowselImage" id="carowselImage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CarowselDescription">Change Link</label>
+                        <input type="text" class="form-control" name="CarowselLink" id="CarowselDescription" required>
+                    </div>
+
+            </div>
+            <div class="modal-footer EditCarouselFooter">
+                <button type="submit"  class="EditCarouselSubmitButton">Submit Carowsel</button>
+                </form>
+                <button type="button" class="EditCarouselClosemainButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal 2-->
+<div class="modal fade" id="60c5d8d4406cb72d3c95ea97" role="dialog">
+    <div  class="modal-dialog modal-lg">
+        <div  class="modal-content">
+            <div class="modal-header EditCarouseHeader ">
+                <h4 class="modal-title">Edit carousel</h4>
+                <button type="button" class="EditCarosuseCloseButton" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body EidtCarouselBody">
+                <form action="/admin/edit-carowsel" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <img style="width: 250px;" class="c" src="/carowsel-images/60c5d8d4406cb72d3c95ea97.jpg" id="imgView" alt="carowsel">
+                    </div>
+                    <input type="text" name="id" value="60c5d8d4406cb72d3c95ea97" hidden>
+                    <div class="form-group">
+                        <label for="carowselImage">Choose carousel</label>
+                        <input type="file" class="form-control-file" onchange="viewImage(event)"  accept="image/jpg, image/jpeg" name="CarowselImage" id="carowselImage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CarowselDescription">Change Link</label>
+                        <input type="text" class="form-control" name="CarowselLink" id="CarowselDescription" required>
+                    </div>
+
+            </div>
+            <div class="modal-footer EditCarouselFooter">
+                <button type="submit"  class="EditCarouselSubmitButton">Submit Carowsel</button>
+                </form>
+                <button type="button" class="EditCarouselClosemainButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal 3-->
+<div class="modal fade" id="60c5d8db406cb72d3c95ea98" role="dialog">
+    <div  class="modal-dialog modal-lg">
+        <div  class="modal-content">
+            <div class="modal-header EditCarouseHeader ">
+                <h4 class="modal-title">Edit carousel</h4>
+                <button type="button" class="EditCarosuseCloseButton" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body EidtCarouselBody">
+                <form action="/admin/edit-carowsel" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <img style="width: 250px;" class="c" src="/carowsel-images/60c5d8db406cb72d3c95ea98.jpg" id="imgView" alt="carowsel">
+                    </div>
+                    <input type="text" name="id" value="60c5d8db406cb72d3c95ea98" hidden>
+                    <div class="form-group">
+                        <label for="carowselImage">Choose carousel</label>
+                        <input type="file" class="form-control-file" onchange="viewImage(event)"  accept="image/jpg, image/jpeg" name="CarowselImage" id="carowselImage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CarowselDescription">Change Link</label>
+                        <input type="text" class="form-control" name="CarowselLink" id="CarowselDescription" required>
+                    </div>
+
+            </div>
+            <div class="modal-footer EditCarouselFooter">
+                <button type="submit"  class="EditCarouselSubmitButton">Submit Carowsel</button>
+                </form>
+                <button type="button" class="EditCarouselClosemainButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal 4-->
+<div class="modal fade" id="60c5d8e3406cb72d3c95ea99" role="dialog">
+    <div  class="modal-dialog modal-lg">
+        <div  class="modal-content">
+            <div class="modal-header EditCarouseHeader ">
+                <h4 class="modal-title">Edit carousel</h4>
+                <button type="button" class="EditCarosuseCloseButton" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body EidtCarouselBody">
+                <form action="/admin/edit-carowsel" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <img style="width: 250px;" class="c" src="/carowsel-images/60c5d8e3406cb72d3c95ea99.jpg" id="imgView" alt="carowsel">
+                    </div>
+                    <input type="text" name="id" value="60c5d8e3406cb72d3c95ea99" hidden>
+                    <div class="form-group">
+                        <label for="carowselImage">Choose carousel</label>
+                        <input type="file" class="form-control-file" onchange="viewImage(event)"  accept="image/jpg, image/jpeg" name="CarowselImage" id="carowselImage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CarowselDescription">Change Link</label>
+                        <input type="text" class="form-control" name="CarowselLink" id="CarowselDescription" required>
+                    </div>
+
+            </div>
+            <div class="modal-footer EditCarouselFooter">
+                <button type="submit"  class="EditCarouselSubmitButton">Submit Carowsel</button>
+                </form>
+                <button type="button" class="EditCarouselClosemainButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal 5-->
+<div class="modal fade" id="60c5d8ea406cb72d3c95ea9a" role="dialog">
+    <div  class="modal-dialog modal-lg">
+        <div  class="modal-content">
+            <div class="modal-header EditCarouseHeader ">
+                <h4 class="modal-title">Edit carousel</h4>
+                <button type="button" class="EditCarosuseCloseButton" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body EidtCarouselBody">
+                <form action="/admin/edit-carowsel" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <img style="width: 250px;" class="c" src="/carowsel-images/60c5d8ea406cb72d3c95ea9a.jpg" id="imgView" alt="carowsel">
+                    </div>
+                    <input type="text" name="id" value="60c5d8ea406cb72d3c95ea9a" hidden>
+                    <div class="form-group">
+                        <label for="carowselImage">Choose carousel</label>
+                        <input type="file" class="form-control-file" onchange="viewImage(event)"  accept="image/jpg, image/jpeg" name="CarowselImage" id="carowselImage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="CarowselDescription">Change Link</label>
+                        <input type="text" class="form-control" name="CarowselLink" id="CarowselDescription" required>
+                    </div>
+
+            </div>
+            <div class="modal-footer EditCarouselFooter">
+                <button type="submit"  class="EditCarouselSubmitButton">Submit Carowsel</button>
+                </form>
+                <button type="button" class="EditCarouselClosemainButton" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function viewImage(event){
+        document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+    
+
+
+
+    //Get reference of FileUpload.
+    var fileUpload = document.getElementById("carowselImage");
+        //Check whether HTML5 is supported.
+        if (typeof (fileUpload.files) != "undefined") {
+            //Initiate the FileReader object.
+            var reader = new FileReader();
+            //Read the contents of Image File.
+            reader.readAsDataURL(fileUpload.files[0]);
+            reader.onload = function (e) {
+                //Initiate the JavaScript Image object.
+                var image = new Image();
+ 
+                //Set the Base64 string return from FileReader as source.
+                image.src = e.target.result;
+                       
+                //Validate the File Height and Width.
+                image.onload = function () {
+                    var height = this.height;
+                    var width = this.width;
+                    if (height > 472 || width > 1417) {
+                        alert("Height and Width must not exceed 472px x 1417px.");
+                        return false;
+                    }
+                    return true;
+                };
+ 
+            }
+        } 
+   
+}
+</script>

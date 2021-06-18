@@ -1,0 +1,44 @@
+<section class="">
+  <div class="allProductSection container ">
+    <div class=" ">
+      <div class="">
+        <h2 class="text-center  allproductsheader">All to artist Forms</h2>
+        <table class="table " id="productTable">
+          <thead class="bg-dark text-light">
+            <tr>
+              
+              <th scope="col">User Profile</th>
+              <th scope="col">User name</th>
+              <th scope="col">Ur Id</th>
+              <th scope="col">Email id</th>
+              <th scope="col">Mobile</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each allForms}}
+            <tr>
+             
+              <td><img style="width: 40px; hight:40px; border-radius :100px;" src="/user-images/{{this.userId}}.jpg"
+                  alt="user-image" ></td>
+              <td>{{this.FirstName}} {{this.LastName}}</td>
+              <td>{{this.UrId}}</td>
+              <td>{{this.EmailId}}</td>
+                <td>{{this.Mobile}}</td>
+ 
+             
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>

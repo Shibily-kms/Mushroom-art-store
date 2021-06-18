@@ -1,0 +1,805 @@
+.DCIchooseimage{
+    background-color: rgb(201, 201, 201);
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 55px;
+}
+.DCIaddbutton{
+    padding: 15px;
+    background-color: rgb(63, 63, 63);
+    color: white;
+    font-size: 19px;
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 55px;
+}
+
+@media (max-width: 767px) {
+    .DCIchooseimage {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    }
+    .DCIaddbutton{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 0; 
+    border-bottom-left-radius: 10px;
+    }
+  } 
+
+
+.DCIimage{
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+  
+}
+.DCIimageDiv{
+    display: flex;
+    justify-content: center;
+}
+.DCIimageviewDiv{
+    padding-top: 15px;
+}
+
+/* shopping cart */
+
+
+
+.SCheading{
+    color: rgb(68, 68, 68);
+    text-align: center;
+    margin-top: 35px;
+}
+.sCitemHeading{
+    color: rgb(68, 68, 68);
+}
+.SCcartItemImage{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.6);
+}
+.SCcartItemDiv{
+    padding: 20px;
+   
+}
+.SCitemName{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.SCitemid{
+    font-size: 13px;
+    color: rgb(78, 78, 78);
+    margin: 0;
+    margin-bottom: 10px;
+}
+.SCitemDescription{
+    font-size: 13px;
+    margin: 0;
+    margin-bottom: 10px;
+
+}
+.SCitemMinus{
+    border: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 100px;
+    
+}
+
+.SCitemPlus{
+    border: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 100px;
+}
+.SCItemNumberDiv{
+    background-color: rgb(175, 175, 175);
+    border-radius: 100px;
+    padding: 2px;
+}
+
+.SCromoveButton{
+    border: none;
+    background-color: white;
+    font-size: 13px;
+    padding: 0;
+    color: rgb(78, 78, 78);
+    margin-right: 20px;
+}
+.SCromoveButton:hover i{
+    color: red;
+}
+.SCtotalHeader{
+    font-weight: 600;
+    color: rgb(43, 43, 43);
+    margin-bottom: 20px;
+}
+.SCtotalItem{
+    font-size: 15px;
+    font-weight: 200;
+    color: rgb(139, 139, 139);
+    display: inline;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.SCtotalItemDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.SCtotal{
+    font-size: 15px;
+    font-weight: 200;
+    color: rgb(139, 139, 139);
+    display: inline;
+
+}
+.SCtotalbutton{
+   color: white;
+   font-size: 18px;
+}
+.SCtotalbutton:hover{
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+}
+.SCtotalButtonDiv{
+    background-color: rgb(0, 106, 192);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.SCtotalDiv{
+    background-color: rgb(236, 236, 236);
+    padding: 15px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+.SCtotal{
+    color: black;
+}
+
+/* place order */
+
+.POdeliveyForm{
+    margin-bottom: 10px;
+}
+.POsideDiv{
+    background-color: rgb(232, 248, 212);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.4);
+}
+.POtatal{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: crimson;
+}
+.POpaymetdHead{
+    font-size: 16px;
+    color: dimgray;
+    
+}
+.POside1{
+    margin-bottom: 35px;
+}
+
+/* success order */
+.SPdiv{
+    display: flex;
+    justify-content: center;
+}
+.SPorderButton{
+    font-size: 18px;
+    color: white;
+    background-color: rgb(2, 64, 122);
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+.SPorderButton2{
+    font-size: 18px;
+    color: white;
+    background-color: rgb(122, 2, 96);
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+/*  order list */
+.OLborder{
+    box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.8);
+    background-color: rgb(236, 236, 236);
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+.OLborderDIv{
+    padding: 10px;
+}
+
+.OLspan2{
+    margin-left: 10px;
+}
+.OLviewbutton{
+    background-color: rgb(1, 125, 156);
+    color: white;
+    text-decoration: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+.OLviewbutton:hover{
+    color: white;
+    text-decoration: none;
+    background-color: rgb(3, 112, 139);
+}
+.OLdivthree{
+    
+    display: flex;
+    justify-content:flex-end;
+}
+
+/* admin dashboard */
+
+.AMDprofileImage{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    
+}
+
+.AMDprofilename{
+    font-size: 18px;
+}
+.AMDprofileotherDiv{
+    display: inline;
+    background-color: rgb(202, 202, 202);
+    padding-top: 9px;
+    padding-bottom: 11px;
+    padding-left: 15px;
+    border-radius: 100px;
+    padding-right: 15px;
+    margin-left: 6px;
+}
+.AMDprofileimageDiv{
+    display: inline;
+    background-color: rgb(202, 202, 202);
+    padding-top: 9px;
+    padding-bottom: 11px;
+    padding-left: 5px;
+    border-radius: 100px;
+    padding-right: 15px;
+}
+
+.AMDprofileLogout{
+    display: inline;
+    
+    background-color: #dc3545;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    width: max-content;
+    border-radius: 100px;
+    padding-right: 15px;
+    
+}
+.AMDlogoutButton{
+    color: white;
+    padding-left: 10px;
+}
+.AMDlogoutButton:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.AMDborderDIv1{
+    background-color: rgb(126, 3, 64);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+}
+.AMDborderDIv2{
+    background-color: rgb(5, 99, 128);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+}
+.AMDborderDIv3{
+    background-color: rgb(8, 122, 65);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+}
+.AMDborderDIv4{
+    background-color: rgb(172, 4, 18);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+}
+
+
+
+.AMDmainDIv{
+    padding-bottom: 15px;
+}
+
+.AMDcount{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+   
+}
+.AMDcount i{
+    color: rgba(201, 201, 201, 0.61);
+    
+}
+
+.AMDitemUpper {
+    color: rgb(30, 255, 0);
+}
+.AMDitemLower{
+    color: red;
+}
+/* ...................................secondDIV */
+.AMDsecondDIv1{
+    background-color: rgb(228, 255, 250);
+    border-radius: 10px;
+    
+}
+.AMDsecondcount1Div{
+    display: flex;
+    justify-content: space-around;
+}
+.AMDsecondCount1{
+    color: rgb(0, 124, 101);
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    
+    
+}
+.AMDsecondCounttitle1{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.AMDsecondHeader1{
+    background-color: rgb(0, 124, 101);
+    color: white;
+    padding: 1px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  
+}
+.AMDsecondHeaderitem1{
+    font-size: 16px;
+    font-weight: 0;
+    text-align: center;
+    
+}
+/* --------------------------------------------------------------------------- */
+
+.AMDsecondDIv2{
+    background-color: rgb(255, 248, 210);
+    border-radius: 10px;
+    
+}
+
+.AMDsecondCount2{
+    color: rgb(151, 129, 0);
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    
+    
+}
+.AMDsecondCounttitle2{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.AMDsecondHeader2{
+    background-color: rgb(151, 129, 0);
+    color: white;
+    padding: 1px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  
+}
+.AMDsecondHeaderitem2{
+    font-size: 16px;
+    font-weight: 0;
+    text-align: center;
+    
+}
+/* -------------------------------------------------------- */
+
+.AMDsecondDIv3{
+    background-color: rgb(255, 208, 237);
+    border-radius: 10px;
+    
+}
+
+.AMDsecondCount3{
+    color: rgb(158, 0, 97);
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    
+    
+}
+.AMDsecondCounttitle3{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.AMDsecondHeader3{
+    background-color: rgb(158, 0, 97);
+    color: white;
+    padding: 1px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  
+}
+.AMDsecondHeaderitem3{
+    font-size: 16px;
+    font-weight: 0;
+    text-align: center;
+    
+}
+
+/* ..................................... */
+
+.AMDsecondDIv4{
+    background-color: rgb(255, 214, 181);
+    border-radius: 10px;
+    
+}
+
+.AMDsecondCount4{
+    color: rgb(167, 75, 0);
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    
+    
+}
+.AMDsecondCounttitle4{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.AMDsecondHeader4{
+    background-color: rgb(167, 75, 0);
+    color: white;
+    padding: 1px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  
+}
+.AMDsecondHeaderitem4{
+    font-size: 16px;
+    font-weight: 0;
+    text-align: center;
+    
+}
+/*  .................stars*/
+.AMDstatusBorder{
+    background-color: rgb(187, 228, 255);
+    border-radius:10px ;
+}
+.AMDstatusIconBackground{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(6, 76, 122);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.AMDstatusIconDIv{
+    background-color: rgb(76, 154, 206);
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 100px;
+    margin-top: -30px;
+}
+.AMDstatusIconDIv svg{
+    color: rgb(6, 76, 122);
+}
+.AMDstatusIconmainDiv{
+    display: flex;
+    justify-content: center;
+}
+.AMDstarprofileImage{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+.AMDbodyimage{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+.AMDstatusitemDIv{
+    
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.AMDstatusHr{
+margin: 0;
+padding: 0;
+margin-top: 3px;
+margin-bottom: 3px;
+}
+.AMDstatusHead{
+    text-align: center;
+}
+
+/* .............................Artist Product view Star reting */
+.ArtistViewStarrate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+
+.ArtistViewStarrate:not(:checked)>input {
+    position: absolute;
+    display: none;
+}
+
+.ArtistViewStarrate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(204, 204, 204);
+   
+}
+
+.ArtistViewStarrate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.ArtistViewStarrate>input:checked~label {
+    color: #ffc700;
+}
+
+.ArtistViewStarrate:not(:checked)>label:hover,
+.ArtistViewStarrate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+
+.artistViewProductStarborderDIv{
+    width: 450px;
+    height:auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    border:solid rgb(0, 0, 0) 2px;
+  }
+    
+/* star show in artist dashboard */
+
+
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #ffffff;
+    font-size: 25px;
+    height: 25px;
+    width: 104px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    
+  }
+      .star-ratings-css-top {
+      color: #ffd000;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      display: block;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+      .star-ratings-css-bottom {
+      padding: 0;
+      display: block;
+      z-index: 0;
+        
+    }
+    .star-show-css{
+        background-color:rgb(240, 240, 240);
+        margin-top: 4px;
+        border-radius: 50px;
+        padding-left: 5px;
+        padding-right: 5px;
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: -5px;
+    }
+    
+    /* favorites */
+    .fevoriteBorder{
+        background-color: rgb(250, 250, 250);
+        margin-bottom: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.8);
+       
+        
+    }
+    .fevoriteImage{
+        width: 100px;
+        
+    }
+    .fevoriteImageDiv{
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        padding: 10px;
+        
+      
+    }
+    .fevoriteCloseIcon{
+        font-size: 20px;
+        cursor:pointer;
+        color: rgb(100, 100, 100);
+        
+        
+    }
+    .favoritemainDiv{
+        display: flex;
+    }
+    .fevoriteBody{
+        padding: 5px;
+    }
+    .fevoriteText{
+        color: black;
+        text-decoration: none;
+    }
+    .fevoriteText:hover{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .OrViewBorder{
+        box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.8);
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;   
+        margin-top: 20px;
+    }
+    .OrviewStatusButton{
+        width: 100%;
+        height: 45px;
+        font-size: 18px;
+        border: none;
+        background-color: rgb(0, 108, 141);
+        color: white;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+    .OrViewSatusBorder{
+        background-color: rgb(219, 243, 243);
+        padding: 15px;
+        padding-top: 1px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    .OrViwImage{
+        width: 100px;
+        height: 100px;
+        border-radius: 500px;
+        margin-top: 10px;
+    }
+ 
+    .OrviewPending{
+        font-size: 18px;
+        text-align: center;
+        padding-top: 20px;
+        color: rgb(255, 0, 0);
+    }
+    .OrviewDelivery{
+        font-size: 18px;
+        text-align: center;
+        padding-top: 65px;
+        padding-bottom: 65px;
+        color: rgb(0, 146, 0);
+    }
+    .OrviewAnyprodblem{
+        font-size: 14px;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+    .OrviewPendigButtonDiv{
+        display: flex;
+        justify-content: center;
+    }
+    .OrviewPendigButton1{
+        border: none;
+        background-color: rgb(0, 107, 179);
+        margin-left: 3px;
+        margin-right: 3px;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+    }
+    .OrviewPendigButton2{
+        border: none;
+        background-color: rgb(82, 82, 82);
+        margin-left: 3px;
+        margin-right: 3px;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: 600;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+    }

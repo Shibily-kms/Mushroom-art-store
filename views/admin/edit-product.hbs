@@ -1,0 +1,80 @@
+<section class="pt-">
+    <div class="container">
+        <form action="/admin/all-products/edit-product/{{product._id}}" method="POST" enctype="multipart/form-data">
+            <div class="">
+                <div>
+                    <h2 class="allproductsheader mb-5">Edit Product</h2>
+                </div>
+                <div>
+                    <div>
+                        <div class="CrtArtImagDiv  col-12 col-sm-4 col-md-3 ">
+                            <img class="EditProImag" id="imgView" src="/products-images/{{product._id}}m-art.jpg" alt="user photo">
+                        </div>
+
+                        <div class="col-12 col-sm-8 col-md-9 ">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Product Name :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="ProductName" id="text"
+                                        value="{{product.ProductName}}" placeholder="Not checked">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Category :</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="Category">
+                                        <option value="{{product.Category}}">Choose opetions... </option>
+                                        <option value="For Drowing">Drowing Model</option>
+                                        <option value="For Sales">For Sales</option>
+                                    </select>
+                                    <label>Category of this Product "{{product.Category}}"</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Description :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="Description" id="text"
+                                        value="{{product.Description}}" placeholder="Not checked">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Artist Id :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="ArId" id="text"
+                                        value="{{product.ArId}}" placeholder="Not checked">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Price (₹) :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="Price" id="text"
+                                        value="{{product.Price}}" placeholder="Not checked">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Image :</label>
+                                <div class="col-sm-10">
+                                    <input type="file" class="form-control-file" name="Image" id="text" onchange="viewImage(event)">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="editProSubmButtonDiv  pt-5">
+                    <button type="submit" class="editProSubmButton" > SUBMIT EDITED PRODUCT </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<script>
+    function viewImage(event){
+        document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>

@@ -1,0 +1,276 @@
+<section class="">
+    <div class="" style="background: rgb(192, 218, 229);">
+        <div class="container">
+            <div class="ArAcAccountBody ">
+                <div class="ArAcProfileBody ">
+                    <div class="ArtistProfileAdmin">
+                    </div>
+                    <div class="ArAcProfileImageDiv">
+                        <img class="ArAcProfileImage" src="/artist-images/{{artist._id}}.jpg" alt="artist profile"
+                            onerror="this.onerror=null;callfun(this);">
+                    </div>
+                    <h1 class="ArAcProfileName">{{artist.UserName}}</h1>
+                    <h3 class="ArAcProfileDescrip">{{artist.ArId}} <span style="color: rgb(255, 174, 0);">★</span>
+                        {{starRate}}/5
+                        - ( {{starRate100}}% ) <i class="bi bi-people-fill"></i> {{totalStars}}
+                    </h3>
+                </div>
+                {{!-- nav buttons --}}
+                <div class="sticky">
+                    <div class="ArAcAccountNav  nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+
+                        <a class="ArAcNavItem active  " id="v-pills-details-tab" data-toggle="pill"
+                            href="#v-pills-details" role="tab" aria-controls="v-pills-details"
+                            aria-selected="true"><button class="ArACNavItemButton">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span class="d-none d-sm-none d-md-inline"> Address</span>
+                            </button> </a>
+
+                        <a class="ArAcNavItem " id="v-pills-favorites-tab" data-toggle="pill" href="#v-pills-favorites"
+                            role="tab" aria-controls="v-pills-favorites" aria-selected="false"><button
+                                class="ArACNavItemButton "> <i class="bi bi-grid-3x3-gap-fill"></i><span
+                                    class="d-none d-sm-none d-md-inline"> All products</span> </button></a>
+
+                        <a class="ArAcNavItem" id="v-pills-billing-tab" data-toggle="pill" href="#v-pills-billing"
+                            role="tab" aria-controls="v-pills-delivery" aria-selected="false"> <button
+                                class="ArACNavItemButton"> <i class="bi bi-file-earmark-ppt-fill"></i><span
+                                    class="d-none d-sm-none d-md-inline"> Pending Products</span> </button> </a>
+
+                       
+
+                    </div>
+                </div>
+                <div class="ArAcAccoundbody">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        {{!-- Details --}}
+                        <div class=" tab-pane active" id="v-pills-details" role="tabpanel"
+                            aria-labelledby="v-pills-details-tab">
+                            <h4 class="ArAcBodyItemHeader"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                                    <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                                    <path
+                                        d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
+                                </svg></span> Billing Address</h4>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Full name </th>
+                                        <th scope="col">: {{artist.FirstName}} {{artist.LastName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Phone number </th>
+                                        <th scope="col">: {{artist.Mobile}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">PIN Code </th>
+                                        <th scope="col">: {{artist.Pincode}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">House </th>
+                                        <th scope="col">: {{artist.House}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Area/Colony </th>
+                                        <th scope="col">: {{artist.Area}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Landmark </th>
+                                        <th scope="col">: {{artist.Landmark}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Town/City </th>
+                                        <th scope="col">: {{artist.City}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Contry - State </th>
+                                        <th scope="col">: {{artist.Country}} - {{artist.State}}</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
+                            {{!-- delivery address --}}
+
+                            <h4 class="ArAcBodyItemHeader pt-5"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg> Delivery Address</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Full name </th>
+                                        <th scope="col">: {{artist.FirstName}} {{artist.LastName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Phone number </th>
+                                        <th scope="col">: {{artist.DMobile}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">PIN Code </th>
+                                        <th scope="col">: {{artist.DPincode}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">House </th>
+                                        <th scope="col">: {{artist.DHouse}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Area/Colony </th>
+                                        <th scope="col">: {{artist.DArea}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Landmark </th>
+                                        <th scope="col">: {{artist.DLandmark}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Town/City </th>
+                                        <th scope="col">: {{artist.DCity}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Country - State </th>
+                                        <th scope="col">: {{artist.DCountry}} - {{artist.DState}}</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                        {{!-- all products --}}
+                        <div class=" tab-pane fade" id="v-pills-favorites" role="tabpanel"
+                            aria-labelledby="v-pills-favorites-tab">
+                            <table class="table" id="productTable">
+                                <thead class="bg-dark text-light">
+                                    <tr>
+
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Product Id</th>
+                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Category</th>
+
+
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Edit/Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each allProducts}}
+                                    <tr>
+
+                                        <td><img style="width: 50px; hight:50px;"
+                                                src="/products-images/{{this._id}}m-art.jpg" alt="image"></td>
+                                        <td>{{this.PrId}}</td>
+                                        <td>{{this.ProductName}}</td>
+
+                                        <td>{{this.Category}}</td>
+
+
+                                        <td>{{this.Price}}</td>
+
+                                        <td>
+                                            <a href="/admin/all-products/view-product/{{this._id}}"
+                                                class="btn btn-primary"><span
+                                                    class="glyphicon glyphicon-eye-open"></span></a>
+                                            <a href="/admin/all-products/delete/{{this._id}}" class="btn btn-danger"
+                                                onclick="return confirm('Are you want to delete {{this.ProductName}} ?')"><span
+                                                    class="glyphicon glyphicon-remove"></span></a>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        {{!-- Pending products --}}
+                        <div class=" tab-pane fade" id="v-pills-billing" role="tabpanel"
+                            aria-labelledby="v-pills-billing-tab">
+                            <table class="table " id="productTable1">
+                                <thead class="bg-dark text-light">
+                                    <tr>
+
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Category</th>
+
+                                        <th scope="col">Status</th>
+
+                                        <th scope="col">View/Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each allPentingProducts}}
+                                    <tr>
+
+                                        <td><img style="width: 50px; hight:50px;"
+                                                src="/unproducts-images/{{this._id}}m-art.jpg" alt="product-image"
+                                                onerror="this.onerror=null;callfun(this);"></td>
+                                        <td>{{this.ProductName}}</td>
+                                        <td>{{this.Category}}</td>
+
+                                        <td>
+                                            <span class="{{this.Status}}">{{this.Status}}</span>
+                                        </td>
+
+                                        <td>
+                                            <a href="/admin/pending-products/view-product/{{this._id}}"
+                                                class="btn btn-primary"><span
+                                                    class="glyphicon glyphicon-eye-open"></span></a>
+                                            <a href="/admin/pending-products/delete/{{this._id}}" class="btn btn-danger"
+                                                onclick="return confirm('Are you want to delete {{this.ProductName}} ?')"><span
+                                                    class="glyphicon glyphicon-remove"></span></a>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+
+<script>
+    var header = document.getElementById("v-pills-tab");
+    var btns = header.getElementsByClassName("ArAcNavItem");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+</script>
+
+<script>
+
+    $(function () {
+        $('#productTable').DataTable();
+    });
+</script>
+<script>
+
+    $(function () {
+        $('#productTable1').DataTable();
+    });
+</script>

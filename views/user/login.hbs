@@ -1,0 +1,75 @@
+<section class="bg-light pt-5 pb-5">
+    <dir class="container pt-5 pb-5">
+        <div class="row pt-5">
+            <div class="bg-light col-sm-12 col-md-6 ">
+                <div class="d-flex justify-content-center align-center  ">
+                    <img src="images/user-login.png" alt="user login image">
+                    <br>
+
+                </div>
+                <h3 class="text text-dark text-center"> Login... Purchace... bye...</h3>
+            </div>
+
+            <div class=" col-sm-12 col-md-6  ">
+                <div class="d-flex align-center justify-content-center ">
+                    <img class=" " src="images/mushroom color.png" alt="brand logo" width="250px">
+                </div>
+                <div class="row">
+                    <h4 class="text-center">Purchase beuifull art</h4>
+                </div>
+
+
+
+                <div>
+                    <form action="/login" method="POST" class="form pt-5">
+                        {{#if loginErr}}
+                        <div class="alert alert-danger">
+                            <strong><span class="glyphicon glyphicon-exclamation-sign"></span> Login Error!</strong>
+                            <br>
+                            <p class="pt-2 "> {{loginErr}} </p>
+                        </div>
+                        {{/if}}
+                        <div>
+                            <h2 class="mb-3 ">Login Account</h2>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" name="EmailId">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password1" name="Password1">
+                            <div>
+                                <a href="">forget password ? </a>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" onclick="myFunction()"> Show password
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="pt-5">
+                    <h4>Create New Account ? <a href="/signup">Register</a></h4>
+                </div>
+            </div>
+        </div>
+    </dir>
+</section>
+
+
+{{!-- ///////////////////////////// --}}
+<script>
+    function myFunction() {
+        var x = document.getElementById("password1");
+        if (x.type === "password") {
+            x.type = "text"
+        } else {
+            x.type = "password"
+        }
+    }
+
+</script>

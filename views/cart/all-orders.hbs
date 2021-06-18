@@ -1,0 +1,55 @@
+<section class="pt-5">
+    <div class="container">
+        <div class="pt-5">
+            <div>
+                <h4 class="ArAcBodyItemHeader "><i class="bi bi-list-ol"></i> Orders List</h4>
+
+                <div>
+                    {{#each orders}}
+                    <div class="OLborderDIv col-md-6 col-sm-12">
+                        <div class="OLborder">
+                            <div>
+                                <h5 class="OLaddress"><strong>Address :</strong> {{this.address.House}} -
+                                    {{this.address.Area}} - {{this.address.Landmark}} - {{this.address.City}} -
+                                    {{this.address.Pincode}} - {{this.address.State}} - {{this.address.Country}} </h5>
+                                <div class="Oldivtwo">
+                                    <h5 class="OLphoneDate"><strong>Phone number :</strong> {{this.address.Mobile}}
+                                    </h5>
+                                    <h5 id="new"><strong>Date :</strong> {{this.date}}</h5>
+                                    {{!-- <script> 
+                                            document.getElementById("new").innerHTML = "fulldate";
+                                        var d =  document.getElementById("new").innerHTML;
+                                        var fulldate = (d.getDate()) + '-' + (d.getMonth() + 1) + '-' + (d.getFullYear()) + '_' + (d.getHours()) + '-' + (d.getMinutes()) + '-' + (d.getSeconds()) + '-' + (d.getMilliseconds());
+                                        
+                                    </script> --}}
+                                    <h5><strong>Payment Method :</strong> {{this.paymentMethod}} </h5>
+                                    <h5><strong>Total Amount : ₹{{this.totalAmout}}.00 </strong></h5>
+                                    <h5><strong>Status :</strong><span class="{{this.status}}">{{this.status}}</span>
+                                    </h5>
+                                    {{#if ../artist}}
+                                    <div class="OLdivthree">
+                                        <a href="/artist/my-orders/view-order-products/{{this._id}}" class="OLviewbutton">View
+                                            products</a>
+                                    </div>
+                                    {{else}}
+                                    <div class="OLdivthree">
+                                        <a href="/my-orders/view-order-products/{{this._id}}" class="OLviewbutton">View
+                                            products</a>
+                                    </div>
+                                    {{/if}}
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

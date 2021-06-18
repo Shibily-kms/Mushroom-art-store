@@ -1,0 +1,78 @@
+1. website visiters count
+    <div id="CounterVisitor">
+          <span class="counter-item">0</span>
+          <span class="counter-item">0</span>
+          <span class="counter-item">1</span>
+          <span class="counter-item">1</span>
+          <span class="counter-item">8</span>
+          <span class="counter-item">4</span>
+    </div>
+
+    
+<script>
+        var n = localStorage.getItem('on_load_counter');
+
+    if (n === null) {
+        n = 0;
+    }
+
+    n++;
+
+    localStorage.setItem("on_load_counter", n);
+
+    document.getElementById('CounterVisitor').innerHTML = n;
+
+</script>
+
+.........................................................................
+2. table serial number count
+
+
+<div>
+    <table class="css-serial">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>1st Column</th>
+      <th>2nd Column</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <!--intentionally left blank-->
+      <td></td>
+      <td>Column 1</td>
+      <td>Column 2</td>
+    </tr>
+    <tr>
+      <!--intentionally left blank-->
+      <td></td>
+      <td>Column 1</td>
+      <td>Column 2</td>
+    </tr>
+    <tr>
+      <!--intentionally left blank-->
+      <td></td>
+      <td>Column 1</td>
+      <td>Column 2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<style>
+    .css-serial {
+  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;  /* Increment the serial number counter */
+  content: counter(serial-number);  /* Display the counter */
+}
+
+</style>
+
+.................................................................................
+
+3.

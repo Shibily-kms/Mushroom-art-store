@@ -1,0 +1,219 @@
+<section class="bg-light pt-5 pb-5">
+    <dir class="container pt-5 pb-5">
+        <div class="row pt-5">
+            <div class="bg-light col-md-6 col-sm-12 ">
+                <div class="d-flex align-center justify-content-center  ">
+                    <img class=" " src="images/mushroom color.png" alt="brand logo" width="250px">
+                </div>
+                <div style="margin-bottom: 80px;">
+                    <h4 class="text-center">Purchase beuifull art</h4>
+                </div>
+
+                <div class="d-flex justify-content-center align-center  ">
+                    <img src="images/user-login.png" alt="user login image">
+                    <br>
+
+                </div>
+                <h3 class="text text-dark text-center">Register... Purchace... Bye... </h3>
+            </div>
+
+            <div class=" col-md-6 col-sm-12 ">
+
+                {{!-- form --}}
+                {{#if createErr}}
+                <div class="alert alert-danger">
+                    <strong><span class="glyphicon glyphicon-exclamation-sign"></span> Singup Error!</strong>
+                    <br>
+                    <p class="pt-2 "> {{createErr}} </p>
+                </div>
+                {{/if}}
+
+                <form action="/signup" method="POST" enctype="multipart/form-data" onsubmit="return checkaInputs()"
+                    class="formsing " id="formsing">
+
+                    <div>
+                        <h2 class="mb-3 ">Create Account</h2>
+                    </div>
+
+                    <div class="form-groupAS ">
+                        <label for="username">First name</label>
+                        <input type="text" class="form-control " id="firstname" name="FirstName" minlength="3">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+                    <div class="form-groupAS ">
+                        <label for="username">Last name</label>
+                        <input type="text" class="form-control " id="lastname" name="LastName" minlength="3">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS ">
+                        <label for="username">Usre name</label>
+                        <input type="text" class="form-control " id="username1" name="UserName" minlength="3">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+                    <div class="form-groupAS">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control " id="email1" aria-describedby="emailHelp"
+                            name="EmailId">
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <i class="glyphicon glyphicon-info-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control " id="password1" name="Password1" minlength="6"
+                            maxlength="12">
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <i class="glyphicon glyphicon-info-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+                    <div class="form-groupAS">
+                        <label for="exampleInputPassword1">Confirm Password</label>
+                        <input type="password" class="form-control " id="password21">
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <i class="glyphicon glyphicon-info-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+                    <div class="form-groupAS">
+                        
+                        <input type="text" class="form-control " name="UrId" id="" hidden>
+                        
+                    </div>
+
+
+
+                    <div>
+                        <input type="checkbox" onclick="myFunction()"> Show password
+                    </div>
+
+                    <div class="form-groupAS col-12 col-md-12 ">
+                        <button type="subimt" class="btn btn-primary">Singup</button>
+                    </div>
+                </form>
+                <div class="pt-5">
+                    <h4>Already have account ? <a href="/login">login</a></h4>
+                </div>
+            </div>
+        </div>
+    </dir>
+</section>
+
+
+{{!-- ///////////////////////////// --}}
+<script>
+    function myFunction() {
+        var x = document.getElementById("password1");
+        if (x.type === "password") {
+            x.type = "text"
+        } else {
+            x.type = "password"
+        }
+    }
+
+</script>
+
+
+
+
+{{!-- ///////////////////////////// --}}
+
+<script>
+    const form = document.getElementById('formsing');
+    const firstname = document.getElementById('firstname');
+    const lastname = document.getElementById('lastname');
+    const username = document.getElementById('username1');
+    const email = document.getElementById('email1');
+    const password = document.getElementById('password1');
+    const password2 = document.getElementById('password21');
+
+
+
+    function checkaInputs() {
+
+        const firstnameValue = firstname.value;
+        const lastnameValue = lastname.value;
+        const usernameValue = username.value;
+        const emailValue = email.value;
+        const passwordValue = password.value;
+        const password2Value = password2.value;
+
+
+        if (firstnameValue === '') {
+            setErrorFor(firstname, 'Enter Fist name');
+            return false;
+        } else if (!isNaN(firstnameValue)) {
+            setErrorFor(firstname, 'Enter letters only')
+            return false;
+        } else {
+            setSuccessFor(firstname);
+        }
+
+        if (lastnameValue === '') {
+            setErrorFor(lastname, 'Enter Last name');
+            return false;
+        } else if (!isNaN(lastnameValue)) {
+            setErrorFor(lastname, 'Enter letters only')
+            return false;
+        } else {
+            setSuccessFor(lastname);
+        }
+
+
+        if (usernameValue === '') {
+            setErrorFor(username, 'Enter full name');
+            return false;
+        } else {
+            setSuccessFor(username);
+        }
+
+        if (emailValue === '') {
+            setErrorFor(email, 'Enter email id');
+            return false;
+        } else if (!isEmail(emailValue)) {
+            setErrorFor(email, 'Not a valid email');
+            return false;
+        } else {
+            setSuccessFor(email);
+        }
+
+        if (passwordValue === '') {
+            setErrorFor(password, 'Enter password');
+            return false;
+        } else {
+            setSuccessFor(password);
+        }
+
+        if (password2Value === '') {
+            setErrorFor(password2, 'Enter confiem password');
+            return false;
+        } else if (passwordValue !== password2Value) {
+            setErrorFor(password2, 'Passwords does not match');
+            return false;
+        } else {
+            setSuccessFor(password2);
+        }
+    }
+
+    function setErrorFor(input, message) {
+        const formGroupAS = input.parentElement;
+        const small = formGroupAS.querySelector('small');
+        formGroupAS.className = 'form-groupAS error';
+        small.innerText = message;
+    }
+
+    function setSuccessFor(input) {
+        const formGroupAS = input.parentElement;
+        formGroupAS.className = 'form-groupAS success';
+    }
+    function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+
+</script>

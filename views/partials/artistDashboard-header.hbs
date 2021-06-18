@@ -1,0 +1,117 @@
+<section class="pt-5">
+    <div class="sidebarcontent">
+
+        <div class="ArDswrapper">
+            <nav id="sidebarartist">
+                <div>
+
+                    <div class="ArDssidbarprofileDiv">
+                     
+                     
+                        <img class="ArDssidbarprofile" src="/artist-images/{{artist._id}}.jpg" alt="artist profile"
+                            onerror="this.onerror=null;callfun(this);">
+
+                    </div>
+                    <h3 class="ArDssidebarName">{{artist.FirstName}} {{artist.LastName}}</h3>
+
+                    <div class="ArDssidbarprofileDiv">
+                        <div class="ArDssidbarStar">
+                            <div>
+                                <div class="star-ratings-css">
+                                    <div class="star-ratings-css-top" style="width:{{starRate100}}%">
+                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                    </div>
+                                    <div class="star-ratings-css-bottom">
+                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <small class="star-show-css">{{starRate}}</small>
+                    </div>
+                </div>
+                <hr class="ArDshr">
+                <div class="ArDssidenav">
+                    <div class="ArDslist-group" id="v-pills-tab">
+                        <a class=" ArDslist-group-item active" href="/artist/dashboard/status"><i
+                                class="bi bi-graph-up"></i>
+                            Status</a>
+
+                        <a class="ArDslist-group-item   " href="/artist/dashboard/add-product"><i
+                                class="bi bi-plus-circle"></i> Add prdouct</a>
+                        <a class="ArDslist-group-item   " href="/artist/dashboard/product-list"><i
+                                class="bi bi-list-ol"></i> Product list</a>
+                        <a class="ArDslist-group-item   " href="/artist/dashboard/confimed-products"><i
+                                class="bi bi-check-circle"></i> Confimed Products</a>
+                        <a class="ArDslist-group-item   " href="#"><i class="bi bi-credit-card"></i> Payment</a>
+
+
+
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+
+        <div class="ArDsSidebarbuttondiv d-lg-none">
+            <div class="ArDsSidebarbuttonD">
+                <button id="ArDssidebarButton" style="cursor:pointer" onclick="showsidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-three-dots-vertical  sidebarbuttonIcon" viewBox="0 0 16 16">
+                        <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                    </svg>
+                </button>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+<script>
+
+    function showsidebar() {
+        document.getElementById("sidebarartist").style.marginLeft = "0";
+        document.getElementById("sidebarartist").onclick = "colsesidebar()";
+    }
+</script>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+<script>
+    var header = document.getElementById("v-pills-tab");
+    var btns = header.getElementsByClassName("ArDslist-group-item");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+</script>
+
+{{!-- <script>
+    
+    function closebtn{
+        var bar = document.getElementById("sidebarartist").style.color = "red";
+    }
+
+</script> --}}

@@ -1,0 +1,99 @@
+<section>
+    <div class="container">
+        <div class="VeArPrborder">
+
+            <div>
+                <h1 class="VeArPrheader">Edit Product Dtails</h1>
+            </div>
+
+            <div class="VeArPrProductImageDiv" id="homeCarousel">
+
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+
+
+            </div>
+
+            <div class="VeArPsScrollButtonDiv">
+                <button class="VeArPrScrollButton" id="slideLeft" type="button"><i
+                        class="bi bi-chevron-left"></i></button>
+                <button class="VeArPrScrollButton" id="slideRight" type="button"><i
+                        class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="VeArPrContent">
+                <div class="ArPrEdContent">
+                    <form action="/admin/pending-products/view-product/{{ProductDetails._id}}/edit" method="POST">
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="exampleInputEmail1">Product Title</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="ProductName" aria-describedby="emailHelp"
+                                value="{{ProductDetails.ProductName}}" placeholder="Nill">
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="exampleInputEmail1">Category</label>
+                            <input type="text" class="form-control" name="Category" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                value="{{ProductDetails.Category}}" readonly placeholder="Nill">
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="exampleInputEmail1">Price</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="Price" aria-describedby="emailHelp"
+                                value="{{ProductDetails.Price}}" placeholder="Nill">
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="exampleInputEmail1">Artist Id</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                value="{{ProductDetails.ArId}}" disabled placeholder="Nill">
+                            <small>Check all artist page any more</small>
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="exampleInputEmail1">Description</label>
+                            <div class="EdArPrDescrptionShow">
+                                <p>{{ProductDetails.Description}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6 ">
+                            <label for="exampleInputEmail1">Edit Description</label>
+                            <textarea type="text" style="height: 150px;" class="form-control" name="Description" id="exampleInputEmail1"
+                                aria-describedby="emailHelp"  minlength="15" required
+                                placeholder="Edit description / Paste description text in 'Description' box here..."></textarea>
+                        </div>
+                        
+                           <div>
+                            <input type="text" class="form-control" name="Status"  value="Edited" hidden >
+                          </div>
+                       
+                        <div class="form-group col-sm-12 d-inline" >
+                            <button class="btn btn-primary d-inline" type="reset"><i class="bi bi-arrow-repeat"></i> Reset</button>
+                            <button type="submit" class="btn btn-success "><i class="bi bi-check2-square"></i> Submit edit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div>
+                <p class="text-center text-secondary" >* After confime artist this edit, Get publish product</p>
+
+
+            </div>
+        </div>
+</section>
+
+
+<script>
+    const buttonRight = document.getElementById('slideRight');
+    const buttonLeft = document.getElementById('slideLeft');
+
+    buttonRight.onclick = function () {
+        document.getElementById('homeCarousel').scrollLeft += 350;
+    };
+    buttonLeft.onclick = function () {
+        document.getElementById('homeCarousel').scrollLeft -= 350;
+    };
+</script>

@@ -1,0 +1,932 @@
+<section class="pt-5">
+    <div class="" style="background: rgb(240, 240, 240);">
+        <div class="container">
+            <div class="ArAcAccountBody ">
+                <div class="ArAcProfileBody ">
+                    <div class="ArAcProfileBackground">
+                    </div>
+                    <div class="ArAcProfileImageDiv">
+                        <img class="ArAcProfileImage" src="/user-images/{{user._id}}.jpg" alt="user profile"
+                            onerror="this.onerror=null;callfun(this);">
+                    </div>
+                    <h1 class="ArAcProfileName">{{user.UserName}}</h1>
+                    <h3 class="ArAcProfileDescrip"><span class="glyphicon glyphicon-envelope"></span> {{user.EmailId}}
+                        <span class="glyphicon glyphicon-phone-alt"></span> {{user.Mobile}}
+                    </h3>
+                </div>
+                {{#if passwordError}}
+                <div class="changepasswordMessage">
+                    <div class="changemessageBorde">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5><i class="bi bi-shield-lock-fill"></i> <strong>Incurrect current Password! </strong></h5>
+                        <h5>{{passwordError}}!</h5>
+
+                    </div>
+                </div>
+                {{/if}}
+
+                {{#if passwordSuccess}}
+                <div class="changepasswordMessageSuccess">
+                    <div class="changemessageBordeSuccess">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5><i class="bi bi-check-circle-fill"></i> <strong>Password changed! </strong></h5>
+                        <h5>{{passwordSuccess}} !</h5>
+
+                    </div>
+                </div>
+                {{/if}}
+
+
+
+                {{!-- nav buttons --}}
+                <div class="sticky">
+                    <div class="ArAcAccountNav  nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+
+                        <a class="ArAcNavItem active  " id="v-pills-details-tab" data-toggle="pill"
+                            href="#v-pills-details" role="tab" aria-controls="v-pills-details"
+                            aria-selected="true"><button class="ArACNavItemButton">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                                </svg>
+                                <span class="d-none d-sm-none d-md-inline"> Details</span>
+                            </button> </a>
+
+                        <a class="ArAcNavItem " id="v-pills-favorites-tab" data-toggle="pill" href="#v-pills-favorites"
+                            role="tab" aria-controls="v-pills-favorites" aria-selected="false"><button
+                                class="ArACNavItemButton "> <span class="glyphicon glyphicon-heart-empty"></span><span
+                                    class="d-none d-sm-none d-md-inline"> Favorites</span> </button></a>
+
+                        <a class="ArAcNavItem" id="v-pills-billing-tab" data-toggle="pill" href="#v-pills-billing"
+                            role="tab" aria-controls="v-pills-delivery" aria-selected="false"> <button
+                                class="ArACNavItemButton"> <span class="glyphicon glyphicon-map-marker"></span><span
+                                    class="d-none d-sm-none d-md-inline"> Address</span> </button> </a>
+
+
+
+                        <a class="ArAcNavItem" id="v-pills-password-tab" data-toggle="pill" href="#v-pills-password"
+                            role="tab" aria-controls="v-pills-password" aria-selected="false"> <button
+                                class="ArACNavItemButton"><span class="glyphicon glyphicon-lock"></span><span
+                                    class="d-none d-sm-none d-md-inline"> Password</span></button></a>
+
+                        <a class="ArAcNavItem" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+                            role="tab" aria-controls="v-pills-settings" aria-selected="false"><button
+                                class="ArACNavItemButton"> <span class="glyphicon glyphicon-cog"></span><span
+                                    class="d-none d-sm-none d-md-inline"> Settings</span> </button></a>
+                        <a class="ArAcNavItem" id="v-pills-artist-tab" data-toggle="pill" href="#v-pills-artist"
+                            role="tab" aria-controls="v-pills-artist" aria-selected="false"><button
+                                class="ArACNavItemButton"> <span class="glyphicon glyphicon-th-large"></span><span
+                                    class="d-none d-sm-none d-md-inline"> Policy</span> </button></a>
+
+                    </div>
+                </div>
+                <div class="ArAcAccoundbody">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        {{!-- Details --}}
+                        <div class=" tab-pane active" id="v-pills-details" role="tabpanel"
+                            aria-labelledby="v-pills-details-tab">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">User name </th>
+                                        <th scope="col">: {{user.UserName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">First name </th>
+                                        <th scope="col">: {{user.FirstName}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Last name </th>
+                                        <th scope="col">: {{user.LastName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Ur ID </th>
+                                        <th scope="col">: {{user.UrId}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Email address </th>
+                                        <th scope="col">: {{user.EmailId}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Place </th>
+                                        <th scope="col">: {{user.Area}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Mobile No </th>
+                                        <th scope="col">: {{user.Mobile}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Country </th>
+                                        <th scope="col">: {{user.Country}}/{{user.State}}</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                        {{!-- favorites --}}
+                        <div class=" tab-pane fade" id="v-pills-favorites" role="tabpanel"
+                            aria-labelledby="v-pills-favorites-tab">
+                            <div>
+                                <div>
+                                    {{#each favorites}}
+                                    <div class="fevoriteBorder ">
+                                        <div class="favoritemainDiv">
+                                            <div class="fevoriteImageDiv  ">
+                                                <span
+                                                    onclick="removeFavorite('{{../user._id}}','{{this.products._id}}')"
+                                                    class="fevoriteCloseIcon"><i class="bi bi-x-circle-fill"></i></span>
+                                                <a class="fevoriteText"
+                                                    href="/{{this.products.Category}}/view-item/{{this.products._id}}"
+                                                    title="👁 View product">
+                                                    <img class="fevoriteImage"
+                                                        src="/products-images/{{this.products._id}}m-art.jpg"
+                                                        alt="Product image">
+
+                                            </div>
+                                            <div class="fevoriteBody  ">
+                                                <h4>{{this.products.ProductName}} </h4>
+                                                <h5>Category: {{this.products.Category}}</h5>
+                                                <h4 style="color: rgb(0, 51, 128);">Price: ₹{{this.products.Price}}.00
+                                                </h4>
+                                            </div></a>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        {{!-- billing address --}}
+                        <div class=" tab-pane fade" id="v-pills-billing" role="tabpanel"
+                            aria-labelledby="v-pills-billing-tab">
+
+                            <h4 class="ArAcBodyItemHeader"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                                    <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                                    <path
+                                        d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
+                                </svg></span> Billing Address</h4>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Full name </th>
+                                        <th scope="col">: {{user.FirstName}} {{user.LastName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Phone number </th>
+                                        <th scope="col">: {{user.Mobile}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">PIN Code </th>
+                                        <th scope="col">: {{user.Pincode}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">House </th>
+                                        <th scope="col">: {{user.House}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Area/Colony </th>
+                                        <th scope="col">: {{user.Area}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Landmark </th>
+                                        <th scope="col">: {{user.Landmark}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Town/City </th>
+                                        <th scope="col">: {{user.City}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Contry - State </th>
+                                        <th scope="col">: {{user.Country}} - {{user.State}}</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
+                            {{!-- delivery address --}}
+
+                            <h4 class="ArAcBodyItemHeader pt-5"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg> Delivery Address</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Full name </th>
+                                        <th scope="col">: {{user.FirstName}} {{user.LastName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Phone number </th>
+                                        <th scope="col">: {{user.DMobile}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">PIN Code </th>
+                                        <th scope="col">: {{user.DPincode}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">House </th>
+                                        <th scope="col">: {{user.DHouse}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Area/Colony </th>
+                                        <th scope="col">: {{user.DArea}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Landmark </th>
+                                        <th scope="col">: {{user.DLandmark}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Town/City </th>
+                                        <th scope="col">: {{user.DCity}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Country - State </th>
+                                        <th scope="col">: {{user.DCountry}} - {{user.DState}}</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+
+                        </div>
+
+
+                        {{!-- change password --}}
+                        <div class=" tab-pane fade" id="v-pills-password" role="tabpanel"
+                            aria-labelledby="v-pills-password-tab">
+                            <div class="UbodyChpasDiv">
+
+                                <form action="/change-password" method="POST" onsubmit="return checkNewpassword()"
+                                    id="ArAcpasswordForm" name="passwordForm">
+                                    <h3>Change password</h3>
+
+                                    <div class="ArAcPassword">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            value="{{user.EmailId}}" aria-describedby="emailHelp" name="EmailId"
+                                            placeholder="Enter email" readonly>
+                                        <i class="glyphicon glyphicon-remove-sign"></i>
+                                        <i class="glyphicon glyphicon-ok "></i>
+                                        <small>Error massage</small>
+                                    </div>
+                                    <div class="ArAcPassword">
+                                        <label for="exampleInputPassword1">Current Password</label>
+                                        <input type="password" class="form-control" name="Password1"
+                                            placeholder="Password">
+                                        <i class="glyphicon glyphicon-remove-sign"></i>
+                                        <i class="glyphicon glyphicon-ok "></i>
+                                        <small>Error massage</small>
+
+                                    </div>
+
+                                    <div class="ArAcPassword">
+                                        <label for="exampleInputEmail1">New Password</label>
+                                        <input type="password" class="form-control" id="password11" name="PasswordNew"
+                                            maxlength="12" minlength="6" aria-describedby="emailHelp"
+                                            placeholder="Enter New password">
+                                        <i class="glyphicon glyphicon-remove-sign"></i>
+                                        <i class="glyphicon glyphicon-ok "></i>
+                                        <small>Error massage</small>
+                                    </div>
+                                    <div class="ArAcPassword">
+                                        <label for="exampleInputPassword1">Confiem Password</label>
+                                        <input type="password" class="form-control" id="password12"
+                                            placeholder="Confiem Password">
+                                        <i class="glyphicon glyphicon-remove-sign"></i>
+                                        <i class="glyphicon glyphicon-ok "></i>
+                                        <small>Error massage</small>
+                                        <br> <a href="">Forget password ?</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        {{!-- settings --}}
+
+                        <div class=" tab-pane fade" id="v-pills-settings" role="tabpanel"
+                            aria-labelledby="v-pills-settings-tab">
+
+
+
+
+                            <form action="/settings" method="POST" onsubmit="return checkaInput()"
+                                enctype="multipart/form-data" id="artistSettingsform">
+                                <div class="ArAcSettFormBody">
+                                    <h4 class="ArAcBodyItemHeader"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                            height="20" fill="currentColor" class="bi bi-pencil-square"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                            <path fill-rule="evenodd"
+                                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                        </svg> Edit Profile</h4>
+
+                                    <div class="pb-3">
+
+                                        <img class="ArAcSettFormImag" src="/user-images/{{user._id}}.jpg"
+                                            id="profileview" alt="user profile image"
+                                            onerror="this.onerror=null;callfun(this);">
+
+                                        <div class="ArAcSettings row ">
+                                            <label class="col-sm-2 col-form-label">Edit Photo</label>
+                                            <div class="col-sm-10">
+                                                <input class="pt-3" type="file" name="Profile" id="profile"
+                                                    onchange="viewImage(event)" accept="image/jpg, image/jpeg">
+                                                <h5>Profile Maximum width : 700px, height : 700px and size : 3 MB</h5>
+                                                <i class="glyphicon glyphicon-info-sign"></i>
+                                                <i class="glyphicon glyphicon-ok-sign "></i>
+                                                <small>Error massage</small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">First name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.FirstName}}"
+                                                name="FirstName" id="firstname">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">Last name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.LastName}}"
+                                                name="LastName" id="lastname">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">User name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.UserName}}"
+                                                name="UserName" id="username">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">Phone No</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.Mobile}}" readonly>
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Email Id</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" value="{{user.EmailId}}"
+                                                name="EmailId" readonly>
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <div class="ArAcSettFormBody">
+                                    <h4 class="ArAcBodyItemHeader"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                            height="20" fill="currentColor" class="bi bi-cash-stack"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                                            <path
+                                                d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
+                                        </svg> Edit Billing Address</h4>
+
+
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">Full Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control"
+                                                value="{{user.FirstName}} {{user.LastName}}" readonly>
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">Phone No</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.Mobile}}"
+                                                name="Mobile" id="mobile" minlength="10" maxlength="10">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">PIN code</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.Pincode}}"
+                                                name="Pincode" id="pincode">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">House</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.House}}" name="House"
+                                                placeholder="House no, Building, Company" id="house">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Area</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.Area}}" name="Area"
+                                                placeholder="Area/Colony/Street/village" id="area">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">City</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="City/Town"
+                                                value="{{user.City}}" name="City" id="city">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Landmark</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.Landmark}}"
+                                                name="Landmark" placeholder="e.g near Appolo Hospital" id="landmark">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Country</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.Country}}"
+                                                name="Country" id="country">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">State</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.State}}" name="State"
+                                                id="state">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <div class="ArAcSettFormBody">
+                                    <h4 class="ArAcBodyItemHeader"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                            height="20" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        </svg> Eidt Delivery Address</h4>
+
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Full Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control"
+                                                value="{{user.FirstName}} {{user.LastName}}" readonly>
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Phone No</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.DMobile}}"
+                                                name="DMobile" id="dmobile" minlength="10" maxlength="10">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">PIN code</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.DPincode}}"
+                                                name="DPincode" id="dpincode">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">House</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.DHouse}}"
+                                                name="DHouse" placeholder="House no, Building, Company" id="dhouse">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Area</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.DArea}}" name="DArea"
+                                                placeholder="Area/Colony/Street/village" id="darea">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">City</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="City/Town"
+                                                value="{{user.DCity}}" name="DCity" id="dcity">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Landmark</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.DLandmark}}"
+                                                name="DLandmark" placeholder="e.g near Appolo Hospital" id="dlandmark">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Contry</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.DCountry}}"
+                                                name="DCountry" id="dcontry">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">State</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{user.DState}}"
+                                                name="DState" id="dstate">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <input type="text" class="form-control" value="{{user._id}}" name="id" hidden>
+                                    </div>
+
+
+                                </div>
+                                <hr>
+                                <div class="ArAcSettFormBody">
+                                    <h5>submit all edits</h5>
+                                    <div class="useraccForm">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class=" tab-pane fade" id="v-pills-artist" role="tabpanel"
+                            aria-labelledby="v-pills-artist-tab">
+                            <div class="UbodyChpasDiv">
+                                <h3>Are you want sall a product ?</h3>
+                                <p class="text-justify">In Harry’s world fate works not only through powers and objects
+                                    such as prophecies,
+                                    the Sorting Hat, wands, and the Goblet of Fire, but also through people. Repeatedly,
+                                    other characters decide Harry’s future for him, depriving him of freedom and choice.
+                                    For example, before his eleventh birthday, the Dursleys control Harry’s life,
+                                    keeping from him knowledge of his past and understanding of his identity (Sorcerer’s
+                                    49). In Harry Potter and the Chamber of Secrets, Dobby repeatedly assumes control
+                                    over events by intercepting Ron’s and Hermione’s letters during the summer; by
+                                    sealing the barrier to Platform 93⁄4, causing Harry to miss the Hogwarts Express;
+                                    and by sending a Bludger after Harry in a Quidditch match, breaking his wrist. Yet
+                                    again, in Harry Potter and the Prisoner of Azkaban, many adults intercede while
+                                    attempting to protect Harry from perceived danger, as Snape observes: “Everyone from
+                                    the Minister of Magic downward has been trying to keep famous Harry Potter safe from
+                                    Sirius Black” (284). All these characters, as enactors of fate, unknowingly drive
+                                    Harry toward his destiny by attempting to control or to direct his life, while
+                                    themselves controlled and directed by fate.</p>
+
+                                <div>
+                                    <strong>
+
+                                        <li class="text-justify">
+                                            The American Heritage Dictionary of the English Language. 4th ed. New York:
+                                            Houghton
+                                            Mifflin, 2000.
+                                        </li>
+                                        <li class="text-justify">
+
+                                            Johnson, Samuel. Lives of the Poets: Addison, Savage, etc.. Project
+                                            Gutenberg,
+                                            November 2003. E-Book, #4673.
+                                        </li>
+                                        <li class="text-justify">
+                                            Rozakis, Laurie E. Master the AP English Language and Composition Test.
+                                            Lawrenceville, NJ: Peterson's, 2000. ISBN 0-7645-6184-7 (10). ISBN
+                                            978-0-7645-6184-9
+                                        </li>
+
+                                    </strong>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h4>Are you want sall a product ?</h4>
+                                </div>
+                                <div>
+
+
+                                    <li class="text-justify">
+                                        The American Heritage Dictionary of the English Language. 4th ed. New York:
+                                        Houghton
+                                        Mifflin, 2000.
+                                    </li>
+                                    <li class="text-justify">
+
+                                        Johnson, Samuel. Lives of the Poets: Addison, Savage, etc.. Project Gutenberg,
+                                        November 2003. E-Book, #4673.
+                                    </li>
+                                    <li class="text-justify">
+                                        Rozakis, Laurie E. Master the AP English Language and Composition Test.
+                                        Lawrenceville, NJ: Peterson's, 2000. ISBN 0-7645-6184-7 (10). ISBN
+                                        978-0-7645-6184-9
+                                    </li>
+                                    <li class="text-justify">
+
+                                        Johnson, Samuel. Lives of the Poets: Addison, Savage, etc.. Project Gutenberg,
+                                        November 2003. E-Book, #4673.
+                                    </li>
+                                    <li class="text-justify">
+                                        Rozakis, Laurie E. Master the AP English Language and Composition Test.
+                                        Lawrenceville, NJ: Peterson's, 2000. ISBN 0-7645-6184-7 (10). ISBN
+                                        978-0-7645-6184-9
+                                    </li>
+
+                                </div>
+                                <div>
+                                    <form action="/account/artist-form" method="POST" >
+
+                                    <div class="checkboxdivcrateartist">
+                                        <label>I agree this policy </label>
+                                        <label class="switch ">
+                                            <input type="checkbox" class="form-control" value="{{user._id}}" name="id" required>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+
+<script>
+    var header = document.getElementById("v-pills-tab");
+    var btns = header.getElementsByClassName("ArAcNavItem");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+</script>
+
+<script>
+
+    const form = document.getElementById('artistSettingsform');
+    const firstname = document.getElementById('firstname');
+    const lastname = document.getElementById('lastname');
+    const username = document.getElementById('username');
+    const mobile = document.getElementById('mobile');
+    const dmobile = document.getElementById('dmobile');
+
+
+    function viewImage(event) {
+
+        if (event.target.files && event.target.files[0]) {
+            const file = event.target.files[0];
+            const profileValue = profile.value;
+
+            const maxFileSize = 3145728; // 3 MB
+            const maxWidth = 700;
+            const maxHeight = 700;
+
+
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+            img.onload = () => {
+                if (file.size > maxFileSize) {
+                    setErrorFor(profile, 'The selected image file is too big. Please choose one that is smaller than 3 MB.');
+                    //  alert('The selected image file is too big. Please choose one that is smaller than 3 MB.'); //
+                } else if (file.type.match('image.jpg') && file.type.match('image.jpeg')) {
+                    setErrorFor(profile, 'This not jpg/jpeg file.');
+                    // alert('this not jpg/jpeg file')
+                } else if (file.type.match('image.*') && (img.width > maxWidth || img.height > maxHeight)) {
+                    setErrorFor(profile, 'The selected image is too big. Please choose one with maximum dimensions of 700 px x 700 px.');
+                    // alert(`The selected image is too big. Please choose one with maximum dimensions of ${maxWidth} px x${maxHeight} px.`);
+                } else {
+
+                    document.getElementById('profileview').src = URL.createObjectURL(event.target.files[0])
+
+                    event.target.nodeName === 'INPUT'
+                        ? (event.target.form.querySelector("input[type='submit']").disabled = false)
+                        : event.target.submit();
+                }
+            };
+        }
+    };
+
+
+    function checkaInput() {
+
+        const firstnameValue = firstname.value;
+        const lastnameValue = lastname.value;
+        const usernameValue = username.value;
+        const mobileValue = mobile.value;
+        const dmobileValue = dmobile.value;
+
+        if (firstnameValue === '') {
+            setErrorFor(firstname, 'Enter Fist name');
+            return false;
+        } else if (!isNaN(firstnameValue)) {
+            setErrorFor(firstname, 'Enter letters only')
+            return false;
+        } else {
+            setSuccessFor(firstname);
+        }
+
+        if (lastnameValue === '') {
+            setErrorFor(lastname, 'Enter Last name');
+            return false;
+        } else if (!isNaN(lastnameValue)) {
+            setErrorFor(lastname, 'Enter letters only')
+            return false;
+        } else {
+            setSuccessFor(lastname);
+        }
+
+        if (usernameValue === '') {
+            setErrorFor(username, 'Enter User name');
+            return false;
+        } else {
+            setSuccessFor(username);
+        }
+
+        if (mobileValue === '') {
+            setErrorFor(mobile, 'Enter complete 10 digitel number');
+            return false;
+        } else if (isNaN(mobileValue)) {
+            setErrorFor(mobile, 'Enter Numbers only');
+            return false;
+        } else {
+            setSuccessFor(mobile);
+        }
+
+        if (dmobileValue === '') {
+            setErrorFor(dmobile, 'Enter complete 10 digitel number');
+            return false;
+        } else if (isNaN(dmobileValue)) {
+            setErrorFor(dmobile, 'Enter Numbers only');
+            return false;
+        } else {
+            setSuccessFor(dmobile);
+        }
+    }
+
+    function setErrorFor(input, message) {
+        const ArAcSettings = input.parentElement;
+        const small = ArAcSettings.querySelector('small');
+        ArAcSettings.className = 'ArAcSettings error';
+        small.innerText = message;
+    }
+
+    function setSuccessFor(input) {
+        const ArAcSettings = input.parentElement;
+        ArAcSettings.className = 'ArAcSettings success';
+    }
+</script>
+
+
+<script>
+    const forms = document.getElementById('ArAcpasswordForm');
+    const password11 = document.getElementById('password11');
+    const password12 = document.getElementById('password12');
+
+    function checkNewpassword() {
+
+        const password11Value = password11.value;
+        const password12Value = password12.value;
+
+
+
+        if (password11Value === '') {
+            setErrorForr(password11, 'Enter New password');
+            return false;
+        } else {
+            setSuccessForr(password11);
+        }
+
+        if (password12Value === '') {
+            setErrorForr(password12, 'Enter confiem password');
+            return false;
+        } else if (password11Value !== password12Value) {
+            setErrorForr(password12, 'Passwords does not match');
+            return false;
+        } else {
+            setSuccessForr(password12);
+        }
+
+
+    }
+
+    function setErrorForr(input, message) {
+        const ArAcPassword = input.parentElement;
+        const small = ArAcPassword.querySelector('small');
+        ArAcPassword.className = 'ArAcPassword notOk';
+        small.innerText = message;
+    }
+
+    function setSuccessForr(input) {
+        const ArAcPassword = input.parentElement;
+        ArAcPassword.className = 'ArAcPassword ok';
+    }
+</script>
+
+
+<script>
+
+    function removeFavorite(userId, proId) {
+
+
+        $.ajax({
+            url: '/remove-favorite',
+            data: {
+                user: userId,
+                product: proId,
+            },
+            method: 'post',
+            success: (respon) => {
+                if (respon.removeProduct) {
+                    alert('Removed form favorite list')
+                    location.reload()
+                }
+            }
+        })
+    }
+</script>

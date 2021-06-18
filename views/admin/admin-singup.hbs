@@ -1,0 +1,300 @@
+{{!-- <section class="pt-5">
+    <div class="container">
+        <div class="adSiBorderdiv">
+            <div class="adSiBorder col-12 col-md-10 ">
+                <div>
+                    <h1 class="adSiHeader">Create New Admin</h1>
+                </div>
+                {{#if admincreateErr}}
+                <div class="alert alert-danger">
+                    <strong><span class="glyphicon glyphicon-exclamation-sign"></span> Singup Error!</strong>
+                    <br>
+                    <p class="pt-2 "> {{admincreateErr}} </p>
+                </div>
+                {{/if}}
+                {{#if adminaccountSuccess}}
+                <div class="alert alert-success">
+                    <strong><span class="glyphicon glyphicon-ok-sign"></span> Singup Success !</strong>
+                    <br>
+                    <p class="pt-2 "> {{adminaccountSuccess}} </p>
+                </div>
+                {{/if}}
+                <div>
+                    <form action="/admin/settings/create-admin" method="POST" onsubmit="return checkInputs(event)"
+                        id="adminSingupForm">
+                        <div class="form-groupAS col-12 col-md-6">
+                            <label for="inputEmail4">First Name</label>
+                            <input type="text" class="form-control" id="adminName1" name="adminFirstName"
+                                placeholder="First name" minlength="3">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <i class="glyphicon glyphicon-ok-sign "></i>
+                            <small>Error massage</small>
+                        </div>
+                        <div class="form-groupAS col-12 col-md-6">
+                            <label for="inputPassword4">Last Name</label>
+                            <input type="text" class="form-control" id="adminName2" name="adminLastName"
+                                placeholder="Last name" minlength="3">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <i class="glyphicon glyphicon-ok-sign "></i>
+                            <small>Error massage</small>
+                        </div>
+                        <div class="form-groupAS col-12 col-md-12 ">
+                            <label for="inputPassword4">Email Id</label>
+                            <input type="email" class="form-control" id="adminEmail1" name="adminEmailId"
+                                placeholder="Email address">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <i class="glyphicon glyphicon-ok-sign "></i>
+                            <small>Error massage</small>
+                        </div>
+                        <div class="form-groupAS col-12 col-md-6">
+                            <label for="inputEmail4">Password One</label>
+                            <input type="password" class="form-control" id="adminPassword1" name="adminPassword1"
+                                placeholder="Password One" minlength="6" maxlength="12">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <i class="glyphicon glyphicon-ok-sign "></i>
+                            <small>Error massage</small>
+                        </div>
+                        <div class="form-groupAS col-12 col-md-6">
+                            <label for="inputPassword4">Confirm Password</label>
+                            <input type="password" class="form-control" id="adminCPassword1"
+                                placeholder="Confirm password one">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <i class="glyphicon glyphicon-ok-sign "></i>
+                            <small>Error massage</small>
+                        </div>
+                        <div class="form-groupAS col-12 col-md-6">
+                            <label for="inputEmail4">Password Two</label>
+                            <input type="password" class="form-control" id="adminPassword2" name="adminPassword2"
+                                placeholder="Password Two" minlength="6" maxlength="12">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <i class="glyphicon glyphicon-ok-sign "></i>
+                            <small>Error massage</small>
+                        </div>
+                        <div class="form-groupAS col-12 col-md-6">
+                            <label for="inputPassword4">Confirm Password</label>
+                            <input type="password" class="form-control" id="adminCPassword2"
+                                placeholder="Confirm password Two">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            <i class="glyphicon glyphicon-ok-sign "></i>
+                            <small>Error massage</small>
+                        </div>
+
+                        <button type="submit" class="crSinButon">Create Admin</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
+
+<section class="pt-5">
+    <div class="container">
+        <div class="adSiBorderdiv">
+            <div class="adSiBorder col-12 col-md-10 ">
+                <div>
+                    <h1 class="adSiHeader">Create New Admin</h1>
+                </div>
+                {{#if admincreateErr}}
+                <div class="alert alert-danger">
+                    <strong><span class="glyphicon glyphicon-exclamation-sign"></span> Singup Error!</strong>
+                    <br>
+                    <p class="pt-2 "> {{admincreateErr}} </p>
+                </div>
+                {{/if}}
+                {{#if adminaccountSuccess}}
+                <div class="alert alert-success">
+                    <strong><span class="glyphicon glyphicon-ok-sign"></span> Singup Success !</strong>
+                    <br>
+                    <p class="pt-2 "> {{adminaccountSuccess}} </p>
+                </div>
+                {{/if}}
+
+                <form action="/admin/settings/create-admin" method="POST" onsubmit="return checkaInputs(event)"
+                    class="formsing pt-5" id="adminSingupForm">
+
+                    <div class="form-groupAS ">
+                        <label for="inputEmail4">First Name</label>
+                        <input type="text" class="form-control " id="adminName1" name="adminFirstName"
+                            placeholder="First name" minlength="3">
+                        <i class="glyphicon glyphicon-info-sign "></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS ">
+                        <label for="input">Last Name</label>
+                        <input type="text" class="form-control" id="adminName2" name="adminLastName"
+                            placeholder="Last name" minlength="3">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS  ">
+                        <label for="inputPassword4">Email Address</label>
+                        <input type="email" class="form-control" id="adminEmail1" name="adminEmailId"
+                            placeholder="Email address">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS ">
+                        <label for="inputEmail4">Password One</label>
+                        <input type="password" class="form-control" id="adminPassword1" name="adminPassword1"
+                            placeholder="Password One" minlength="6" maxlength="12">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS ">
+                        <label for="inputPassword4">Confirm Password</label>
+                        <input type="password" class="form-control" id="adminCPassword1"
+                            placeholder="Confirm password one">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS ">
+                        <label for="inputEmail4">Password Two</label>
+                        <input type="password" class="form-control" id="adminPassword2" name="adminPassword2"
+                            placeholder="Password Two" minlength="6" maxlength="12">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+                    <div class="form-groupAS ">
+                        <label for="inputPassword4">Confirm Password</label>
+                        <input type="password" class="form-control" id="adminCPassword2"
+                            placeholder="Confirm password Two">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <i class="glyphicon glyphicon-ok-sign "></i>
+                        <small>Error massage</small>
+                    </div>
+
+              
+
+                    <div class="form-groupAS ">
+                        <button type="submit" class="crSinButon">Create Admin</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        </dir>
+</section>
+
+
+{{!-- ///////////////////////////// --}}
+
+
+
+
+{{!-- ///////////////////////////// --}}
+
+<script>
+    const form = document.getElementById('adminSingupForm');
+    const username1 = document.getElementById('adminName1');
+    const username2 = document.getElementById('adminName2');
+    const email = document.getElementById('adminEmail1');
+    const password11 = document.getElementById('adminPassword1');
+    const password12 = document.getElementById('adminCPassword1');
+    const password21 = document.getElementById('adminPassword2');
+    const password22 = document.getElementById('adminCPassword2');
+
+
+
+    function checkaInputs() {
+
+
+
+        const username1Value = username1.value;
+        const username2Value = username2.value;
+        const emailValue = email.value;
+        const password11Value = password11.value;
+        const password12Value = password12.value;
+        const password21Value = password21.value;
+        const password22Value = password22.value;
+
+        if (username1Value === '') {
+            setErrorFor(username1, 'Enter First name');
+            return false;
+        } else {
+            setSuccessFor(username1);
+        }
+        if (username2Value === '') {
+            setErrorFor(username2, 'Enter Last name');
+            return false;
+        } else {
+            setSuccessFor(username2);
+        }
+
+        if (emailValue === '') {
+            setErrorFor(email, 'Enter email id');
+            return false;
+        } else if (!isEmail(emailValue)) {
+            setErrorFor(email, 'Not a valid email');
+            return false;
+        } else {
+            setSuccessFor(email);
+        }
+
+        if (password11Value === '') {
+            setErrorFor(password11, 'Enter password One');
+            return false;
+        } else {
+            setSuccessFor(password11);
+        }
+
+        if (password12Value === '') {
+            setErrorFor(password12, 'Enter confiem password One');
+            return false;
+        } else if (password11Value !== password12Value) {
+            setErrorFor(password12, 'Password One does not match');
+            return false;
+        } else {
+            setSuccessFor(password12);
+        }
+
+         if (password21Value === '') {
+            setErrorFor(password21, 'Enter password Two');
+            return false;
+        } else if(password11Value === password21Value){
+            setErrorFor(password21, 'Password One and Two are sim, Enter Diffreand Passwords')
+            return false;
+        }else {
+            setSuccessFor(password21);
+        }
+
+        if (password22Value === '') {
+            setErrorFor(password22, 'Enter confiem password Two');
+            return false;
+        } else if (password21Value !== password22Value) {
+            setErrorFor(password22, 'Password Two does not match');
+            return false;
+        } else {
+            setSuccessFor(password22);
+        }
+    }
+
+    function setErrorFor(input, message) {
+        const formGroupAdS = input.parentElement;
+        const small = formGroupAdS.querySelector('small');
+        formGroupAdS.className = 'form-groupAdS error';
+        small.innerText = message;
+    }
+
+    function setSuccessFor(input) {
+        const formGroupAdS = input.parentElement;
+        formGroupAdS.className = 'form-groupAdS success';
+    }
+    function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+
+</script>

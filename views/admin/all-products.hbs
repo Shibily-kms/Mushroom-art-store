@@ -1,0 +1,87 @@
+<section class="">
+  <div class="allProductSection container ">
+    <div class=" ">
+      <div class="">
+        <h2 class="text-center  allproductsheader">All Products</h2>
+        <div class="addprobuttondiv">
+          <span>Click button for add new product </span>
+          <button class="addprobutton"><a class="addprobuttontext" href="/admin/add-products">Add Products</a></button>
+        </div>
+        {{#if addSuccess}}
+        <div class="alert alert-success alert-dismissible " role="alert">
+          <strong><i class="glyphicon glyphicon-ok-sign "></i> Product created success ! </strong>{{addSuccess}}
+
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {{/if}}
+        <table class="table" id="productTable" >
+          <thead class="bg-dark text-light">
+            <tr>
+              
+              <th scope="col">Image</th>
+              <th scope="col">Product Id</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Category</th>
+
+              <th scope="col">Artist Id</th>
+              <th scope="col">Price</th>
+              <th scope="col">Edit/Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each allproducts}}
+            <tr>
+              
+              <td><img style="width: 50px; hight:50px;" src="/products-images/{{this._id}}m-art.jpg" alt="image"></td>
+              <td>{{this.PrId}}</td>
+              <td>{{this.ProductName}}</td>
+
+              <td>{{this.Category}}</td>
+
+              <td>{{this.ArId}}</td>
+              <td>{{this.Price}}</td>
+
+              <td>
+                <a href="/admin/all-products/view-product/{{this._id}}" class="btn btn-primary"><span
+                    class="glyphicon glyphicon-eye-open"></span></a>
+                <a href="/admin/all-products/delete/{{this._id}}" class="btn btn-danger"
+                  onclick="return confirm('Are you want to delete {{this.ProductName}} ?')"><span
+                    class="glyphicon glyphicon-remove"></span></a>
+              </td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>
+
+{{!-- <style>
+  table {
+  counter-reset: rowNumber;
+}
+
+table tr::before {
+  display: table-cell;
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+  padding-right: 0.3em;
+  text-align: right;
+}
+</style> --}}
+
+<script>
+  
+</script>

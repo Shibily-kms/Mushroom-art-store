@@ -1,0 +1,105 @@
+<section class="pt-5">
+    <dir class="container">
+        <div class="pt-5">
+            <div class="POside1 col-md-8 col-sm-6  ">
+             
+                <form action="/artist/place-order" method="POST" id="checkout-form">
+                    <h4 class="text-center">Delivery Address</h4>
+                    <br>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>Full name</label>
+                        <input type="text" class="form-control" value="{{artist.FirstName}} {{artist.LastName}} " disabled>
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>Email address</label>
+                        <input type="text" class="form-control" value="{{artist.EmailId}}" disabled>
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>Mobile number</label>
+                        <input type="number" class="form-control" value="{{artist.DMobile}}" name="DMobile" id="mobile"
+                            minlength="10" maxlength="10" required>
+
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>PIN code</label>
+                        <input type="number" class="form-control" value="{{artist.DPincode}}" name="DPincode" id="pincode"
+                            required>
+
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>House</label>
+                        <input type="text" class="form-control" value="{{artist.DHouse}}" name="DHouse" id="house"
+                            placeholder="House no, Building, Company" required>
+
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>Area/Colony</label>
+                        <input type="text" class="form-control" value="{{artist.DArea}}" name="DArea" id="area"
+                            placeholder="Area/Colony/Street/village" required>
+
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>Town/City</label>
+                        <input type="text" class="form-control" value="{{artist.DCity}}" name="DCity" id="city"
+                            placeholder="City/Town" required>
+
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>Landmark</label>
+                        <input type="text" class="form-control" value="{{artist.DLandmark}}" name="DLandmark"
+                            id="landmark" placeholder="e.g near Appolo Hospital" required>
+
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>State</label>
+                        <input type="text" class="form-control" value="{{artist.DState}}" name="DState" id="state"
+                            required>
+
+                    </div>
+                    <div class="POdeliveyForm col-md-6 col-sm-12">
+                        <label>Country</label>
+                        <input type="text" class="form-control" value="{{artist.DCountry}}" name="DCountry" id="country"
+                            required>
+
+                    </div>
+
+                    <input type="text" class="form-control" value="{{artist._id}}" name="id" hidden>
+
+                    <div class="form-group col-sm-12 d-inline">
+                        <button class="btn btn-primary d-inline" type="reset"><i class="bi bi-arrow-repeat"></i>
+                            Reset</button>
+                        
+                    </div>
+               
+            </div>
+            <div class="POside2 col-md-4 col-sm-6 ">
+                <div class="POsideDiv">
+                    <div>
+                       
+
+                            <h4 class="text-center">Total Amount </h4>
+                            <h4 class="POtatal">₹{{total}}.00</h4>
+
+                            <hr>
+                            <h5 class="POpaymetdHead">Payment methods</h5>
+
+                            <div>
+                                <input type="radio" name="payment-method" value="COD" checked id="">
+                                <label>COD</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="payment-method" value="ONLINE" id="">
+                                <label>Online Payment</label>
+                            </div>
+                            <div>
+                                <input type="text" name="userId" id="" value="{{artist._id}}" hidden>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Checkout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dir>
+</section>
+

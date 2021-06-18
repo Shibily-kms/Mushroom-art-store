@@ -1,0 +1,63 @@
+<section class="">
+  <div class="allProductSection container ">
+    <div class=" ">
+      <div class="">
+        <h2 class="text-center  allproductsheader">All pending products</h2>
+        <table class="table " id="productTable">
+          <thead class="bg-dark text-light">
+            <tr>
+             
+              <th scope="col">Image</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Artist Id</th>
+              <th scope="col">Status</th>
+         
+              <th scope="col">View/Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each allPentingProducts}}
+            <tr>
+             
+              <td><img style="width: 50px; hight:50px;" src="/unproducts-images/{{this._id}}m-art.jpg"
+                  alt="product-image" onerror="this.onerror=null;callfun(this);"></td>
+              <td>{{this.ProductName}}</td>
+              <td>{{this.Category}}</td>
+              <td>{{this.ArId}}</td>
+              <td>
+                <span class="{{this.Status}}">{{this.Status}}</span>
+              </td>
+ 
+              <td>
+                <a href="/admin/pending-products/view-product/{{this._id}}" class="btn btn-primary"><span
+                    class="glyphicon glyphicon-eye-open"></span></a>
+                <a href="/admin/pending-products/delete/{{this._id}}" class="btn btn-danger"
+                  onclick="return confirm('Are you want to delete {{this.ProductName}} ?')"><span
+                    class="glyphicon glyphicon-remove"></span></a>
+              </td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+
+  function callfun(obj) {
+    var noimg = "/images/user icon.png";
+    obj.src = noimg;
+  }
+
+</script>
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>

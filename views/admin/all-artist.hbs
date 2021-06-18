@@ -1,0 +1,74 @@
+<section class="">
+  <div class="allProductSection container ">
+    <div class=" ">
+      <div class="">
+        <h2 class="text-center  allproductsheader">All Artist</h2>
+        <div>
+        {{#if createartist}}
+        <div class="alert alert-success alert-dismissible " role="alert">
+          <strong><i class="glyphicon glyphicon-ok-sign "></i> Account Created ! </strong> {{createartist}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {{/if}}
+      </div>
+        <div class="addprobuttondiv">
+          <span>Click button for add create new artist </span>
+          <button class="addprobutton"><a class="addprobuttontext" href="/admin/all-artist/create-artist">Create
+              Artist</a></button>
+        </div>
+        
+        <table class="table " id="productTable">
+          <thead class="bg-dark text-light">
+            <tr>
+            
+              <th scope="col">Photo</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Ar Id</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Rating (<span style="color: rgb(255, 196, 0);" ><i class="bi bi-star-fill"></i></span>5)</th>
+              <th scope="col">More Detiles</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            {{#each allArtists}}
+            <tr>
+             
+              <td><img class="allartistImageIcon"  src="/artist-images/{{this._id}}.jpg" alt="artist-image" onerror="this.onerror=null;callfun(this);"></td>
+              <td>{{this.FirstName}} {{this.LastName}}</td>
+              <td>{{this.ArId}}</td>
+              <td>{{this.EmailId}}</td>
+              <td><span style="color: rgb(255, 196, 0);" ><i class="bi bi-star-fill"></i></span> {{this.starRate}}</td>
+              <td><a href="/admin/all-artist/view/{{this._id}}" class="btn btn-secondary"><span class="glyphicon glyphicon-eye-open"></span> View</a></td>
+              <td>
+                <a href="/admin/all-artist/delete/{{this._id}}" class="btn btn-danger"
+                  onclick="return confirm('Are you want to delete {{this.FirstName}} {{this.LastName}} ?')"><span
+                    class="glyphicon glyphicon-remove"></span></a>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>

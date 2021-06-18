@@ -1,0 +1,311 @@
+<section>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</section>
+<section class="pt-5">
+    <div class="container">
+        <div>
+            <div class="row">
+                <div>
+
+                    <div class="AMDprofileDIv">
+                        <div class="AMDprofileLogout">
+                            <div class="AMDprofileimageDiv">
+                                <img class="AMDprofileImage" src="/images/6241267.png"
+                                    alt="admini-profile photo">
+                                <small class="AMDprofilename ">{{admin.adminFirstName}} {{admin.adminLastName}}</small>
+                            </div>
+
+
+                            <a class="AMDlogoutButton" href="/admin/admin-logout"><i class="bi bi-box-arrow-right"></i>
+                                LogOut</a>
+                        </div>
+                    </div>
+
+
+                    <div style="margin-top: 15px;">
+
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div class="AMDborderDIv1">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{OrdersCount.TotalOrder}} <i class="bi bi-bag-check"></i>
+                                    </h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr ">All Orders <span class="AMDitemUpper"><i
+                                            class="bi bi-chevron-double-up">45%</i></span> </h4>
+                            </div>
+                        </div>
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div class="AMDborderDIv2">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{allProductsCount}} <i class="bi bi-images"></i>
+                                    </h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr">All Products <span class="AMDitemLower"><i
+                                            class="bi bi-chevron-double-down">35%</i></span> </h4>
+                            </div>
+                        </div>
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div class="AMDborderDIv3">
+                                <div>
+
+                                    <h4 class="AMDcount text-center"><span id="CounterVisitor"></span> <span><i
+                                                class="bi bi-binoculars"></span></i></h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr">Total visitors <span class="AMDitemUpper"><i
+                                            class="bi bi-chevron-double-up">45%</i></span> </h4>
+                            </div>
+                        </div>
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div class="AMDborderDIv4">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{allMemberCount}} <i class="bi bi-people"></i></i>
+                                    </h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr">All Members <span class="AMDitemUpper"><i
+                                            class="bi bi-chevron-double-up">45%</i></span> </h4>
+                            </div>
+                        </div>
+
+
+
+                        <div class="AMDmainDIv col-md-6 col-sm-12 col-xs-12">
+                            <div class="AMDsecondDIv1">
+                                <div class="AMDsecondcount1Div">
+                                    <div class="AMDsecondCount11">
+                                        <h3 class="AMDsecondCount1">{{forSaleCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle1">For Sales</h4>
+                                    </div>
+                                    <div class="AMDsecondCount11">
+                                        <h3 class="AMDsecondCount1">{{forDrowingCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle1">For Drowings</h4>
+                                    </div>
+                                </div>
+                                <div class="AMDsecondHeader1">
+                                    <div>
+                                        <h4 class="AMDsecondHeaderitem1">Total products : {{allProductsCount}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="AMDmainDIv col-md-6 col-sm-12 col-xs-12">
+                            <div class="AMDsecondDIv2">
+                                <div class="AMDsecondcount1Div">
+                                    <div class="AMDsecondCount21">
+                                        <h3 class="AMDsecondCount2">{{allartistCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle1">Artists</h4>
+                                    </div>
+                                    <div class="AMDsecondCount21">
+                                        <h3 class="AMDsecondCount2">{{allUsersCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle2">Users</h4>
+                                    </div>
+                                </div>
+                                <div class="AMDsecondHeader2">
+                                    <div>
+                                        <h4 class="AMDsecondHeaderitem2">Total members : {{allMemberCount}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="AMDmainDIv col-md-3 col-sm-12 col-xs-12">
+                            <div class="AMDstatusBorder">
+                                <div class="AMDstatusIconBackground">
+                                </div>
+                                <div class="AMDstatusIconmainDiv">
+                                    <div class="AMDstatusIconDIv">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                            fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="AMDstatusbodyDiv">
+                                    {{#each allTenArtist}}
+                                    <div class="AMDstatusitemDIv col-md-12 col-sm-6">
+                                        <tr>
+                                            <td><img class="AMDbodyimage"
+                                                    src="/artist-images/{{this._id}}.jpg" alt="artist Profile Image" onerror="this.onerror=null;callfun(this);"></td>
+                                            <td> {{this.UserName}} - {{this.starRate}}/5 </td>
+                                        </tr>
+                                        <hr class="AMDstatusHr">
+                                    </div>
+                                    {{/each}}
+
+                                </div>
+
+                                <div class="AMDstatusHead">
+                                    <small>Top 10 artist</small>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="AMDmainDIv col-md-9 col-sm-12 col-xs-12">
+                            <div class="AMDsecondDIv3">
+                                <div class="AMDsecondcount1Div">
+                                    <div class="AMDsecondCount31">
+                                        <h3 class="AMDsecondCount3">{{allPendingProductsCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle1">Pending</h4>
+                                    </div>
+                                    <div class="AMDsecondCount31">
+                                        <h3 class="AMDsecondCount3">{{allEditedProductCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle3">Edited</h4>
+                                    </div>
+                                    <div class="AMDsecondCount31">
+                                        <h3 class="AMDsecondCount3">{{allNotvalidProductsCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle3">Not-approved</h4>
+                                    </div>
+                                </div>
+                                <div class="AMDsecondHeader3">
+                                    <div>
+                                        <h4 class="AMDsecondHeaderitem3">Total pending products : {{allunvalidProductCount}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="AMDmainDIv col-md-9 col-sm-12 col-xs-12">
+                            <div class="AMDsecondDIv4">
+                                <div class="AMDsecondcount1Div">
+                                    <div class="AMDsecondCount41">
+                                        <h3 class="AMDsecondCount4">{{OrdersCount.PendingCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle4">Pending</h4>
+                                    </div>
+                                    <div class="AMDsecondCount41">
+                                        <h3 class="AMDsecondCount4">{{OrdersCount.PlacedCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle4">Placed</h4>
+                                    </div>
+                                    <div class="AMDsecondCount41">
+                                        <h3 class="AMDsecondCount4">{{OrdersCount.ConfiemedCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle4">Confiemed</h4>
+                                    </div>
+                                    <div class="AMDsecondCount41">
+                                        <h3 class="AMDsecondCount4">{{OrdersCount.ProcessedCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle4">Processed</h4>
+                                    </div>
+                                    <div class="AMDsecondCount41">
+                                        <h3 class="AMDsecondCount4">{{OrdersCount.ShippedCount}}</h3>
+                                        <h4 class="AMDsecondCounttitle4">Shipped</h4>
+                                    </div>
+                                </div>
+                                <div class="AMDsecondHeader4">
+                                    <div>
+                                        <h4 class="AMDsecondHeaderitem4">Total Order products : {{OrdersCount.TotalOrder}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div style="background-color:brown;" class="AMDborderDIv1">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{allAdminCount}} <i class="bi bi-slack"></i></h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr ">All Admins <span class="AMDitemUpper"> </h4>
+                            </div>
+                        </div>
+                        <div  class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div style="background-color: teal;" class="AMDborderDIv1">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{trashUserCount}} <i class="bi bi-trash"></i></h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr ">Trash Users  </h4>
+                            </div>
+                        </div>
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div style="background-color: rgb(211, 155, 0);" class="AMDborderDIv1">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{trashArtistCount}} <i class="bi bi-trash"></i></h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr ">Trash Artists  </h4>
+                            </div>
+                        </div>
+
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div style="background-color: rgb(0, 134, 7);" class="AMDborderDIv1">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{OrdersCount.DeliveredCount}} <i class="bi bi-truck"></i></h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr ">Total delivery  </h4>
+                            </div>
+                        </div>
+
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div style="background-color: rgb(59, 53, 52);" class="AMDborderDIv1">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{OrdersCount.RejectedCount}} <i class="bi bi-bootstrap-reboot"></i></h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr ">All Rejected Orders  </h4>
+                            </div>
+                        </div>
+
+                        <div class="AMDmainDIv col-md-3 col-sm-6 col-xs-12">
+                            <div style="background-color: rgb(240, 117, 2);" class="AMDborderDIv1">
+                                <div>
+                                    <h4 class="AMDcount text-center">{{toArtistCount}} <i class="bi bi-alt"></i></h4>
+                                </div>
+                                <hr>
+                                <h4 class="AMDitemHeadr ">All to Artist  </h4>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+<script>
+
+
+
+
+    var n = localStorage.getItem('on_load_counter');
+
+    if (n === null) {
+        n = 0;
+    }
+
+    n++;
+
+    localStorage.setItem("on_load_counter", n);
+
+    document.getElementById('CounterVisitor').innerHTML = n;
+
+
+</script>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>

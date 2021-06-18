@@ -1,0 +1,122 @@
+<section style="background-color: rgb(245, 245, 245);" class="pt-5">
+
+{{!-- ............................................. --}}
+  <div class="carouselsider1">
+    <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          {{#each allcarowsel}}
+          <div class="{{active}} ">
+            <img src="/carowsel-images/{{this._id}}.jpg" alt="crousal image">
+            <div class="carousel-caption">
+              <h3>{{this.CarowselHeader}}</h3>
+              <p>{{this.CarowselDescription}}</p>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+     
+      <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
+  <div  class="container pt-5">
+    <div class="row">
+      {{#each allproducts}}
+      <div class="col-12 col-sm-6  col-md-4 col-lg-3 ">
+        <div class="cardBg mb-5 ">
+          {{#if ../artist}}
+            <span  id="hertIconid" class="heartIconOff" onclick="addartistFavorite('{{this._id}}','{{../artist._id}}')" ><i  class="bi bi-heart-fill"></i></span>
+          <a href="/artist/{{this.Category}}/view-item/{{this._id}}">
+            <img class="img-responsive cardImage" src="/products-images/{{this._id}}m-art.jpg"
+              alt="Card image cap">
+          </a>
+
+          {{else}}
+          <span  id="hertIconid" class="heartIconOff" onclick="addFavorite('{{this._id}}','{{../user._id}}')" ><i  class="bi bi-heart-fill"></i></span>
+           <a href="/{{this.Category}}/view-item/{{this._id}}">
+            <img class="img-responsive cardImage" src="/products-images/{{this._id}}m-art.jpg"
+              alt="Card image cap">
+          </a>
+          
+          {{/if}}
+          
+          <div class="card-body">
+            <h5 class="card-title ">{{this.ProductName}}</h5>
+            <p class="card-text">Item : {{this.Category}}</p>
+            <h1 class="proPrice text-end">₹ {{this.Price}}</h1>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+
+</section>
+
+
+<script>
+
+        function addFavorite(proId, userId) {
+            
+            console.log(userId,proId,'user')
+            $.ajax({
+                url: '/add-favorite',
+                data: {
+                    user: userId,
+                    product: proId,
+                    
+                },
+                method: 'post',
+                success: (respon) => {
+                 if(respon.favoriteRemove){
+                   document.getElementById('hertIconid').className = 'heartIconOff'
+                   alert('Remove from fevorite list')
+                 }else if(respon.favoriteNewAdd){
+                    document.getElementById('hertIconid').className = 'heartIconOn'
+                   alert('Add to Favorite list')
+                 }else if(respon.userFavoriteAdd){
+                    document.getElementById('hertIconid').className = 'heartIconOn'
+                   alert('Add to Favorite list new')
+                 }
+                }
+            })
+        }
+</script>
+
+<script>
+
+        function addartistFavorite(proId, userId) {
+            
+            console.log(userId,proId,'user')
+            $.ajax({
+                url: '/artist/add-favorite',
+                data: {
+                    user: userId,
+                    product: proId,
+                    
+                },
+                method: 'post',
+                success: (respon) => {
+                 if(respon.favoriteRemove){
+                   document.getElementById('hertIconid').className = 'heartIconOff'
+                   alert('Remove from fevorite list')
+                 }else if(respon.favoriteNewAdd){
+                    document.getElementById('hertIconid').className = 'heartIconOn'
+                   alert('Add to Favorite list')
+                 }else if(respon.userFavoriteAdd){
+                    document.getElementById('hertIconid').className = 'heartIconOn'
+                   alert('Add to Favorite list new')
+                 }
+                }
+            })
+        }
+</script>

@@ -1,0 +1,111 @@
+<section class="pt-5">
+    <div class="container">
+        <div class="VPSborder">
+            <h3>Choose image</h3>
+            <div>
+                <div class="DCIimageDiv">
+                    <img id="imgView" class="DCIimage" src=""
+                        >
+                </div>
+            </div>
+            {{#if artist}}
+            <div class="">
+                <form action="/artist/add-to-cart/{{productId}}" method="POST" enctype="multipart/form-data">
+                    <div class="DCIimageviewDiv ">
+                        <input class="DCIchooseimage col-12 col-sm-10 col-md-10" name="DrowingImage" class="form-control-file" type="file"
+                            id="myInput" onchange="viewImage(event)" required >
+                        <button type="submit" class="DCIaddbutton col-12 col-sm-2 col-md-2">Submit</button>
+                    </div>
+                </form>
+            </div>
+            {{else}}
+            <div class="">
+                <form action="/add-to-cart/{{productId}}" method="POST" enctype="multipart/form-data">
+                    <div class="DCIimageviewDiv ">
+                        <input class="DCIchooseimage col-12 col-sm-10 col-md-10" name="DrowingImage" class="form-control-file" type="file"
+                            id="myInput" onchange="viewImage(event)" required >
+                        <button type="submit" class="DCIaddbutton col-12 col-sm-2 col-md-2">Submit</button>
+                    </div>
+                </form>
+            </div>
+            {{/if}}
+            <hr>
+            <div style="padding-top: 15px;">
+                <h5 class="text-center">Mushroom art Store</h5>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    function viewImage(event) {
+        document.getElementById('imgView').src = URL.createObjectURL(event.target.files[0])
+    }
+</script>
+
+
+
+
+
+<style>
+    /* Slider image Styles */
+    .cursor {
+        cursor: pointer;
+    }
+
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>

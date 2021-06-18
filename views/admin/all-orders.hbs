@@ -1,0 +1,50 @@
+<section class="pt-5">
+    <div class="container">
+        <div>
+            <div class="">
+                <h2 class="text-center  allproductsheader">All Orders</h2>
+
+                <table class="table " id="productTable">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            <th>Date</th>
+                            <th>OrID</th>
+                            <th scope="col">Method</th>
+                           
+                            <th scope="col">Total Amount</th>
+                            <th scope="col">Status</th>
+                            <th>control</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each allOrders}}
+                        <tr>
+                            
+                            <td>{{this.date}}</td>
+                            <td>{{this.OrId}}</td>
+                            <td>{{this.paymentMethod}}</td>
+                           
+                            <td>{{this.totalAmout}}</td>
+                            <td ><span class="{{this.status}}">{{this.status}}</span></td>
+
+                            <td><a href="/admin/all-orders/view-order/{{this.userId}}/{{this._id}}" class="btn btn-secondary"><span
+                                        class="glyphicon glyphicon-eye-open"></span>
+                                    View</a></td>
+                            
+                        </tr>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>

@@ -1,0 +1,36 @@
+<section>
+    <div class="">
+        <dir class="containeradmin">
+            <div class="box1">
+                <img class="adSgLOgo" src="/images/mushroom color.png" alt="Brand Logo">
+                <h4 class="adLgHead">Admin Login</h4>
+                {{#if loginErrA}}
+                <div class="alert alert-danger">
+                    <strong><span class="glyphicon glyphicon-exclamation-sign"></span> Login Error!</strong>
+                    <br>
+                    <p class="pt-2 "> {{loginErrA}} </p>
+                </div>
+                {{/if}}
+                <form action="/admin/admin-login" method="POST" class="p-2 ">
+                    <div class="form-group">
+                        <label for="adminEmail1">Email address</label>
+                        <input type="email" class="form-control" placeholder="Enter admin email Id" name="adminEmailId">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword1">Password One</label>
+                        <input type="password" class="form-control" placeholder="Password" name="adminPassword1">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword1">Password Two</label>
+                        <input type="password" class="form-control" placeholder="Password" name="adminPassword2">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary text-cente ">Login to Admin Panel</button>
+                </form>
+
+
+            </div>
+        </dir>
+    </div>
+</section>

@@ -1,0 +1,123 @@
+<section>
+    <div class="sidebarContent">
+        <div class="sidebarcontentDiv">
+            <div class="pt-3">
+                <div class="VeArPrborder">
+                    <div>
+                        <h1 class="VeArPrheader">Product Dtails</h1>
+                    </div>
+
+                    <div class="VeArPrProductImageDiv" id="homeCarousel">
+
+                        <img class="VeArPrProductImage" src="/unproducts-images/{{product._id}}m-art.jpg"
+                            alt="PrductImage">
+                        <img class="VeArPrProductImage" src="/unproducts-images/{{product._id}}m-art.jpg"
+                            alt="PrductImage">
+                        <img class="VeArPrProductImage" src="/unproducts-images/{{product._id}}m-art.jpg"
+                            alt="PrductImage">
+                        <img class="VeArPrProductImage" src="/unproducts-images/{{product._id}}m-art.jpg"
+                            alt="PrductImage">
+                        <img class="VeArPrProductImage" src="/unproducts-images/{{product._id}}m-art.jpg"
+                            alt="PrductImage">
+
+
+                    </div>
+
+                    <div class="VeArPsScrollButtonDiv">
+                        <button class="VeArPrScrollButton" id="slideLeft" type="button"><i
+                                class="bi bi-chevron-left"></i></button>
+                        <button class="VeArPrScrollButton" id="slideRight" type="button"><i
+                                class="bi bi-chevron-right"></i></button>
+                    </div>
+                    <div class="VeArPrContent">
+                        <div class="VeArPrContentDiv">
+                            <div class="VaArPrFirst ">
+
+                                <h1 class="VeArPrheader"><strong>{{product.ProductName}}</strong></h1>
+                                <h5 class="VeArPrheader2"><strong>Category : </strong>
+                                    {{product.Category}} <i class="bi bi-record-fill "></i> Status :
+                                    <span class="{{product.Status}}">{{product.Status}}</span>
+                                </h5>
+                                <h1 class="VeArPrheader2">Description :</h1>
+                                <p class="text text-secondary ">{{product.Description}}</p>
+                                <h1 class="VeArPrtext1">Price : ₹{{product.Price}}</h1>
+                            </div>
+                            {{#if Edited}}
+                            <div class="VaArPrSecond ">
+                                <div>
+                                    <div class="alert alert-info" role="alert">
+                                        product edited in Mushroom art stor, You asept this edit.<br>
+                                        Pleace, check edits after submit option...
+                                    </div>
+                                    <div>
+
+
+                                        <form action="/artist/dashboard/product-list/{{product._id}}" method="POST">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio1" name="Status" value="Confiemed"
+                                                    class="form-check-input">
+                                                <label class="custom-control-label" for="customRadio1">Acept admin
+                                                    edit</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio2" name="Status" value="Not-Approve"
+                                                    class="form-check-input" checked>
+                                                <label class="custom-control-label" for="customRadio2">Not Assept admin
+                                                    Edit</label>
+                                            </div>
+                                            <input type="text" name="PrId" class="form-control" value="" hidden>
+                                            <button type="submit" class="btn btn-info  d-inline"><i
+                                                    class="bi bi-check-lg"></i>
+                                                Submit
+                                                Option</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            {{else}} {{#if Pending}}
+                            <div class="VaArPrSecond ">
+                                <p class="text-center">Your product not checked "Mushroom Art store" Admin panel.<br>
+                                    Your product in penting. <br><strong>Waite.. and see...</strong> </p>
+
+                                    <small>Samthing Edit product, Not allowed edit after Admint check</small>
+                                <a id="editbutton" style="width: 100%;" href="/artist/dashboard/product-list/{{product._id}}/edit" class="btn btn-primary"><span
+                                        class="glyphicon glyphicon-edit"></span> Edit Product</a>
+
+                            </div>
+                            {{else}}
+                            <div class="VaArPrSecond ">
+                                <div class="notvalidcontact">
+                                    <img style="width: 250px;" src="/images/mushroom color.png" alt="Brand logo">
+                                </div>
+                                <div>
+                                     <h4 class="text-center " >Contact Us: <br >
+                                      Mobile: 9567148324, 9567148324</h4>
+                                </div>
+                                   
+
+                               
+                            </div>
+                            {{/if}}{{/if}}
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+</section>
+
+<script>
+    const buttonRight = document.getElementById('slideRight');
+    const buttonLeft = document.getElementById('slideLeft');
+
+    buttonRight.onclick = function () {
+        document.getElementById('homeCarousel').scrollLeft += 350;
+    };
+    buttonLeft.onclick = function () {
+        document.getElementById('homeCarousel').scrollLeft -= 350;
+    };
+</script>

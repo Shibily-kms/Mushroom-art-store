@@ -1,0 +1,56 @@
+<section class="">
+  <div class="allProductSection container ">
+    <div class=" ">
+      <div class="">
+        <h2 class="text-center  allproductsheader">All Admin</h2>
+        {{#if same}}
+        <div class="alert alert-danger alert-dismissible " role="alert">
+          <strong><i class="bi bi-x-circle-fill"></i> Not deleted ! </strong>{{same}}
+
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {{/if}} 
+        {{#if deleted}}
+        <div class="alert alert-success alert-dismissible " role="alert">
+          <strong><i class="glyphicon glyphicon-ok-sign "></i> Deleted ! </strong>{{deleted}}
+
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+         {{/if}} 
+        <table class="table">
+          <thead class="bg-dark text-light">
+            <tr>
+              
+              <th scope="col">Photo</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Ad Id</th>
+              <th scope="col">Email Id</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            {{#each allAdmin}}
+            <tr>
+             
+              <td><img style="width: 50px; hight:50px; border-radius:100px" src="/images/6241267.png" alt="admin-image"></td>
+              <td>{{this.adminFirstName}} {{this.adminLastName}}</td>
+              <td>{{this._id}}</td>
+              <td>{{this.adminEmailId}}</td>
+              
+              
+              <td>
+                <a href="/admin/settings/all-admin/delete/{{this._id}}" onclick="return confirm('Are you want to delete {{this.adminFirstName}} {{this.adminLastName}} ?')" class="btn btn-danger" ><span class="glyphicon glyphicon-remove"></span></a></td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

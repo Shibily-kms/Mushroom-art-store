@@ -1,0 +1,133 @@
+<section class="pb-5">
+    <div class="container">
+        <div class="row">
+            <div>
+                <div class="mb-5">
+                    <h2 class="text text-center allproductsheader">Create Artist</h2>
+                </div>
+                <div>
+                    <form action="/admin/all-artist/search-artist" method="POST">
+                    <div class="row p-5 ">
+                        <label>Check user email Id</label><br>
+                        <input style="width: 80%;"  type="text" class="form-control" name="EmailId" placeholder="Enter user email id ">
+                        <button style="width:19%;" type="submit"class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Search</button>
+                        </div>
+                    </form>
+                    
+                    
+                </div>
+                <div class="mt-3">
+                    {{#if searchErr}}
+                    <div class="alert alert-danger alert-dismissible " role="alert">
+                        <strong><i class="glyphicon glyphicon-remove-sign "></i> User Invalid ! </strong> {{searchErr}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="mt-3">
+                    {{#if searchSuccess}}
+                    <div class="alert alert-success alert-dismissible " role="alert">
+                        <strong><i class="glyphicon glyphicon-ok-sign "></i> Valid! </strong>{{searchSuccess}}
+
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h3 class="text allproductsheader ">User Details
+                        <hr class="">
+                    </h3>
+                </div>
+
+
+                <div>
+
+                    <div class="CrtArtImagDiv mb-5  col-12 col-sm-12 col-md-4 ">
+                        <img class="CrtArtImag" src="/user-images/{{user._id}}.jpg" alt="user photo"
+                            onerror="this.onerror=null;callfun(this);">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-8 ">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Full Name :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="FullName" id="text"
+                                    value="{{user.UserName}}" placeholder="Not checked" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Ur Id :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="UrId" id="text" value="{{user.UrId}}"
+                                    placeholder="Not checked" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Place :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="Place" id="text" value="{{user.Area}}"
+                                    placeholder="Not checked" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Mobile :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="Place" id="text" value="{{user.Mobile}}"
+                                    placeholder="Not checked" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <input type="text" class="form-control" name="ArId" id="text" value=""
+                                placeholder="Not checked" hidden>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Email Id :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="EmailId" id="text"
+                                    value="{{user.EmailId}}" placeholder="Not checked" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <form action="/admin/all-artist/search-artist/create/{{user._id}}" method="POST">
+                <div class=" col-12 ">
+                    <mark class="">Note:
+                        This is creating your business friend. Make sure you check the user profile in All Users table.
+                        You are deleting a user and creating a new artist.</mark><br>
+                    <div class="checkboxdivcrateartist">
+                        <label>Create new artist by user Id </label>
+                        <label class="switch ">
+                            <input type="checkbox" class="form-control" value="{{user._id}}" name="_id">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class=" pt-5">
+                    <button class="CrtArtSubmButton" type="submit"> CREATE NEW ARTIST ACCOUNT </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    </div>
+
+</section>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>

@@ -1,0 +1,275 @@
+<section class="">
+    <div class="container">
+        <div class="OrViewBorder">
+            <div style="padding: 10px;" class="col-md-4 col-sm-5 col-xs-12">
+                <div class="OrViewSatusBorder ">
+                    <h3 style="font-weight: 600;">Change status</h3>
+                    <h5 id="statusvalue">Current status : <span
+                            class="{{orderDetails.status}}">{{orderDetails.status}}</span></h5>
+
+                    {{#if Pending}}
+                    <div id="ifNo" style="display: block;">
+                        <h3 id="OrviewPending" class="OrviewPending"> <i style="font-size: 22px;"
+                                class="bi bi-exclamation-circle"></i>
+                            <br> This order's payment <br> not completed
+                        </h3>
+                        <div id="YesButton">
+
+                            <h3 class="OrviewPending" style="color: rgb(88, 88, 88);">Do you want to change the status
+                                of this order?</h3>
+                            <div class="OrviewPendigButtonDiv">
+                                <button class="OrviewPendigButton1" onclick="showRadios()">Yes</button>
+                                <button class="OrviewPendigButton2" onclick="hideYes()">No</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="ifYes" style="display: none;">
+                        <form action="/admin/all-orders/change-status/{{orderDetails._id}}" method="POST">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios1" {{#if
+                                    Placed}} checked {{/if}} value="Placed">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Order Placed
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios2" {{#if
+                                    Confiemed}} checked {{/if}} value="Confiemed">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Confiemed
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios3" {{#if
+                                    Processed}} checked {{/if}} value="Processed">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Processed
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios4" {{#if
+                                    Shipped}} checked {{/if}} value="Shipped">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Shipped
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios5" {{#if
+                                    Delivered}} checked {{/if}} value="Delivered">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Delivered
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios6" {{#if
+                                    Rejected}} checked {{/if}} value="Rejected">
+                                <label style="color: red;" class="form-check-label" for="exampleRadios2">
+                                    Rejected
+                                </label>
+                            </div>
+                            <button type="submit" class="OrviewStatusButton">Submit</button>
+                        </form>
+                    </div>
+
+
+                    {{else}} {{#if Delivered}}
+                    <div id="ifNo" style="display: block;">
+                        <h3 id="OrviewPending" class="OrviewDelivery"> <i style="font-size: 22px;"
+                                class="bi bi-check-circle"></i>
+                            <br> This order's delivery <br> succesfully completed
+                        </h3>
+                        <div id="YesButton">
+
+                            <h3  class="OrviewAnyprodblem" onclick="showRadios()" > Any problems?
+                                </h3>
+                            
+                        </div>
+                    </div>
+
+
+                    <div id="ifYes" style="display: none;">
+                        <form action="/admin/all-orders/change-status/{{orderDetails._id}}" method="POST">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios1" {{#if
+                                    Placed}} checked {{/if}} value="Placed">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Order Placed
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios2" {{#if
+                                    Confiemed}} checked {{/if}} value="Confiemed">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Confiemed
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios3" {{#if
+                                    Processed}} checked {{/if}} value="Processed">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Processed
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios4" {{#if
+                                    Shipped}} checked {{/if}} value="Shipped">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Shipped
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios5" {{#if
+                                    Delivered}} checked {{/if}} value="Delivered">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Delivered
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios6" {{#if
+                                    Rejected}} checked {{/if}} value="Rejected">
+                                <label style="color: red;" class="form-check-label" for="exampleRadios2">
+                                    Rejected
+                                </label>
+                            </div>
+                            <button type="submit" class="OrviewStatusButton">Submit</button>
+                        </form>
+                    </div>
+                    {{else}}
+                    <form action="/admin/all-orders/change-status/{{orderDetails._id}}" method="POST">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="exampleRadios1" {{#if
+                                Placed}} checked {{/if}} value="Placed">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Order Placed
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="exampleRadios2" {{#if
+                                Confiemed}} checked {{/if}} value="Confiemed">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Confiemed
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="exampleRadios3" {{#if
+                                Processed}} checked {{/if}} value="Processed">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Processed
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="exampleRadios4" {{#if
+                                Shipped}} checked {{/if}} value="Shipped">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Shipped
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="exampleRadios5" {{#if
+                                Delivered}} checked {{/if}} value="Delivered">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Delivered
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="status" id="exampleRadios6" {{#if
+                                Rejected}} checked {{/if}} value="Rejected">
+                            <label style="color: red;" class="form-check-label" for="exampleRadios2">
+                                Rejected
+                            </label>
+                        </div>
+                        <button type="submit" class="OrviewStatusButton">Submit</button>
+                    </form>
+                    {{/if}} {{/if}}
+
+                </div>
+            </div>
+
+
+            <div class=" col-md-8 col-sm-7 col-xs-12">
+                <div>
+                    <div class="OrviewUserBorder">
+                        <div>
+                            {{#if userDetails.ArId}}
+                            <img class="OrViwImage" src="/artist-images/{{userDetails._id}}.jpg " alt="artistImage">
+                            {{else}}
+                            <img class="OrViwImage" src="/user-images/{{userDetails._id}}.jpg " alt="userImage">
+                            {{/if}}
+                        </div>
+                        <div>
+                            {{#if userDetails.ArId}}
+                            <h4 class="text-primary ">{{userDetails.FirstName}} {{userDetails.LastName}} -
+                                {{userDetails.ArId}}</h4>
+                            {{else}}
+
+                            <h4 class="text-primary ">{{userDetails.FirstName}} {{userDetails.LastName}} -
+                                {{userDetails.UrId}}</h4>
+                            {{/if}}
+                            <h4>Email: {{userDetails.EmailId}}</h4>
+                            <h4>Mobile: {{orderDetails.address.Mobile}}</h4>
+                            <h4>Delivery address: {{orderDetails.address.House}}, {{orderDetails.address.Area}},
+                                {{orderDetails.address.City}}, {{orderDetails.address.Landmark}},
+                                {{orderDetails.address.Pincode}}, {{orderDetails.address.State}},
+                                {{orderDetails.address.Country}} </h4>
+                            <h4>Product Count: {{orderProductCount}} | Method: {{orderDetails.paymentMethod}}</h4>
+                            <h4>Total Amount: ₹{{orderDetails.totalAmout}}.00</h4>
+                            <h4>Date: {{orderDetails.date}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="OrVIewHr">
+                <h6 class="text-center">mushroom store</h6>
+            </div>
+            <hr style="margin-top: -10px;">
+            <div>
+                {{!-- --}}
+                {{#each orderProductDetails}}
+                <div class="col-xs-12 col-sm-6  col-md-4 col-lg-3 ">
+                    <div class="cardBg mb-5 ">
+
+                        <img class="img-responsive cardImage" src="/products-images/{{this.product._id}}m-art.jpg"
+                            alt="Order product image">
+
+                        <div class="card-body">
+                            <h5 class="card-title ">{{this.product.ProductName}}</h5>
+                            <p class="card-text">Category : {{this.product.Category}}</p>
+                            <p class="card-text">Quantity : {{this.quantity}}</p>
+                            <p class="card-text">ProId : {{this.product.PrId}}</p>
+                            <p class="card-text">Artist Id : {{this.product.ArId}}</p>
+                            <h1 class="proPrice text-end">₹ {{this.product.Price}} x {{this.quantity}}</h1>
+
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                {{!-- --}}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .form-check {
+        font-size: large;
+    }
+</style>
+
+<script>
+    function showRadios() {
+        document.getElementById('ifYes').style.display = 'block';
+        document.getElementById('ifNo').style.display = 'none';
+    }
+    function hideYes() {
+        document.getElementById('YesButton').style.display = 'none';
+        document.getElementById('OrviewPending').style.paddingTop = '70px';
+        document.getElementById('OrviewPending').style.paddingBottom = '70px';
+    }
+</script>

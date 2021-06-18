@@ -1,0 +1,101 @@
+<section>
+    <div class="container">
+        <div class="VeArPrborder">
+
+            <div>
+                <h1 class="VeArPrheader">Product Dtails</h1>
+            </div>
+
+            <div class="VeArPrProductImageDiv" id="homeCarousel">
+
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+                <img class="VeArPrProductImage" src="/unproducts-images/{{ProductDetails._id}}m-art.jpg"
+                    alt="PrductImage">
+
+
+            </div>
+
+            <div class="VeArPsScrollButtonDiv">
+                <button class="VeArPrScrollButton" id="slideLeft" type="button"><i
+                        class="bi bi-chevron-left"></i></button>
+                <button class="VeArPrScrollButton" id="slideRight" type="button"><i
+                        class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="VeArPrContent">
+                <div class="VeArPrContentDiv">
+                    <div class="VaArPrFirst ">
+
+                        <h1 class="VeArPrheader"><strong>{{ProductDetails.ProductName}}</strong></h1>
+                        <h5 class="VeArPrheader2"><strong>Category : </strong> {{ProductDetails.Category}} <i
+                                class="bi bi-record-fill "></i> Status : <span
+                                class="{{ProductDetails.Status}}">{{ProductDetails.Status}}</span> </h5>
+                        <h1 class="VeArPrheader2">Description :</h1>
+                        <p class="text text-secondary ">{{ProductDetails.Description}}</p>
+                        <h1 class="VeArPrtext1">Price : ₹{{ProductDetails.Price}}</h1>
+                    </div>
+
+                    <div class="VaArPrSecond ">
+                        <div class=" d-inline">
+                            <img class="veArPrArtistImage" src="/artist-images/{{ProdctCreater._id}}.jpg"
+                                alt="Artist Image">
+                            <h1 class="VaArPrArtistname"> {{ProdctCreater.FirstName}} {{ProdctCreater.LastName}} -
+                                {{ProdctCreater.ArId}}</h1>
+                            <h1 class="VeArPrheader2"><strong>User name : </strong> {{ProdctCreater.UserName}}</h1>
+                            <h1 class="VeArPrheader2"><strong>Email Id : </strong> {{ProdctCreater.EmailId}}</h1>
+                            <h1 class="VeArPrheader2"><strong>Mobile : </strong> {{ProdctCreater.Mobile}}</h1>
+                            <h1 class="VeArPrheader2"><strong>Address : </strong> {{ProdctCreater.House}},
+                                {{ProdctCreater.Area}}, {{ProdctCreater.City}},
+                                {{ProdctCreater.State}}, {{ProdctCreater.Country}} - {{ProdctCreater.Pincode}} </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="">
+            <div>
+                <h5>View and Check informations and Click Submit Button</h5>
+                <div>
+
+                    <form action="/admin/pending-products/view-product/{{ProductDetails._id}}" method="POST">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="Status" value="Confiemed" class="form-check-input">
+                        <label class="custom-control-label" for="customRadio1">Approve product without Edit</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="Status" value="Not-Approve"
+                            class="form-check-input" checked>
+                        <label class="custom-control-label" for="customRadio2">Not Approve this Product</label>
+                    </div>
+                    <input type="text" name="PrId" class="form-control" value="" hidden>
+                    <button  type="submit" class="btn btn-info  d-inline"><i class="bi bi-check-lg"></i> Submit
+                        Option</button>
+                     <a href="/admin/pending-products/view-product/{{ProductDetails._id}}/edit" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit product</a>
+                    </form>
+
+                   
+                   
+
+                </div>
+                
+            </div>
+        </div>
+</section>
+
+
+<script>
+    const buttonRight = document.getElementById('slideRight');
+    const buttonLeft = document.getElementById('slideLeft');
+
+    buttonRight.onclick = function () {
+        document.getElementById('homeCarousel').scrollLeft += 350;
+    };
+    buttonLeft.onclick = function () {
+        document.getElementById('homeCarousel').scrollLeft -= 350;
+    };
+</script>

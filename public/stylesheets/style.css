@@ -1,0 +1,1793 @@
+*{
+  font-family: 'Trebuchet MS', sans-serif;
+}
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+
+}
+#section{
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+/*login form*/ 
+.userLoginLogo {
+  align-items: center;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* admin Singup */
+
+.box1{
+  background: #e4e4e4;
+  width: 300px;
+  height: auto;
+  border: solid #405d27;
+  border-radius: 12px;
+  margin-top: 110px;
+  
+  
+ 
+}
+.containeradmin{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: auto;
+  align-items: center;
+  margin-left: -35px;
+}
+.adSgLOgo{
+  width: 200px;
+  margin-left: 50px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+
+}
+.adSgHead{
+  margin-left: 86px;
+  margin-bottom: 10px;
+  color: #012e61;
+  font-weight: bold;
+  
+}
+.adLgHead{
+  margin-left: 98px;
+  margin-bottom: 10px;
+  color: #012e61;
+  font-weight: bold;
+  
+}
+/* menu button */
+.menuButton{
+  transform: rotate(90deg);
+  background: #023875;
+  border-radius: 10px;
+  color: white;
+  border-style: none;
+  margin-top: 35px; 
+  margin-left: -20px;
+  height: 45px;
+  width: 100px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.menuButton:hover {
+  background-color: #012e61;
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+  
+
+.menuButton:active {
+  background-color:#022853;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+
+/* all Products */
+
+
+.tableclass{
+  margin-left : 50px;
+  width: 100%;
+  float:left;
+}
+.allproductsheader{
+  margin-top: 40px;
+  color:#022853;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+  
+}
+.addprobutton{
+  background: #405d27;
+  border: none;
+  width: 120px;
+  height: 35px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+.addprobutton:active{
+  background: #517e2a;
+}
+.addprobuttondiv{
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.addprobuttontext{
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+.addprobuttontext:hover{
+  text-decoration:none;
+  color: white;
+}
+.addprobuttontext:active{
+  text-decoration:none;
+  color: white;
+}
+
+
+/* sidebar new */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #023875;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  font-family: 'Trebuchet MS', sans-serif;
+  ;
+}
+
+.sidenav a:hover {
+  color:  white;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  font-family: 'Trebuchet MS', sans-serif;
+ 
+}
+
+#main {
+  transition: margin-left .5s;
+  background: #022853;
+  width: auto;
+  height: 55px;
+  padding-top: 10px;
+  
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.list-group .list-group-item{
+  background: #023875;
+  color: #ffff;
+  
+  border: none;
+}
+
+.list-group .list-group-item:hover {
+  background-color: #002958;
+  color: white;
+}
+  
+
+
+.list-group .list-group-item:focus{
+  background: #f7f7f7;
+  color:rgb(92, 92, 92);
+}
+
+.headerBarnd{
+  margin-right: 30px;
+  float: right;
+}
+.AdminPanel{
+  margin-left: 97px;
+  font-size: 15px;
+  color: white;
+  margin-bottom: -7px;
+
+}
+
+
+/* productCard */
+.cardBg{
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.4);
+  border-radius: 10px;
+  border: solid rgb(158, 158, 158) 1px;
+  
+  
+}
+
+
+.cardImage{
+  background:rgb(255, 206, 206);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+
+}
+.heartIconOff {
+  font-size: 18px;
+  color: #979797;
+  cursor:pointer;
+  position: absolute;
+  background-color: rgba(151, 151, 151, 0.336);
+  width: 33px;
+  height: 33px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 100px;
+  right: 25px;
+  top: 10px;
+}
+
+.heartIconOn {
+  font-size: 18px;
+  color: #f10000;
+  cursor:pointer;
+  position: absolute;
+  background-color: rgba(151, 151, 151, 0.336);
+  width: 33px;
+  height: 33px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 100px;
+  right: 25px;
+  top: 10px;
+}
+
+
+.card-title{
+  font-weight:bolder;
+  
+  color: rgb(66, 66, 66);
+  margin-top: 2px;
+}
+.card-text{
+  
+  margin-top: -5px;
+}
+.proPrice{
+  font-size: 18px;
+  margin-top: 1px;
+  color: #850101;
+  margin-bottom: -2px;
+}
+
+
+.heartIcom{
+  margin-right: 5px;
+}
+
+
+/* carousel home */
+.carouselsider1{
+  padding-top:20px ;
+  display: flex;
+  justify-content: center;
+}
+
+/* editpages */
+.headingpanelbg{
+  background: #363636;
+
+}
+.headingpanel{
+  color: white;
+  font-weight: bold;
+  
+  padding-left: 15px ;
+}
+.hedingpanelbtn{
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+  padding-right: 15px ;
+}
+.hedingpanelbtn:active{
+  color: whitesmoke;
+  text-decoration: none;
+  
+}
+.hedingpanelbtn:hover{
+  color: rgb(207, 207, 207);
+  text-decoration: none;
+}
+.hedingpanelbtn:focus{ 
+  text-decoration: none;
+  color: white;
+  font-size: 15px; 
+}
+.panelSection{
+  background: rgb(243, 243, 243);
+}
+
+.EditCarouseHeader{
+  background-color: rgb(0, 108, 134);
+  color: white;
+ 
+}
+.EditCarosuseCloseButton{
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  background-color: rgb(0, 108, 134);
+  border: none;
+  text-align: center;
+  height: auto;
+}
+.EditCarouselFooter{
+  background-color: rgb(0, 108, 134);
+  color: white;
+}
+.EditCarouselClosemainButton{
+  background-color: #fa2e2e;
+  color: white;
+  border: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.EditCarouselSubmitButton{
+  background-color: #60aa00;
+  color: white;
+  border: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+/* admin Settings */
+
+.adSetButton{
+  width: 100%;
+  height: 65px;
+  background: #850101;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #530000;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.iconbuton{
+  margin-right: 20px;
+  
+}
+.slide_down:hover {
+  box-shadow: inset 400px 0 0 0 #530000;
+}
+
+/* Create Artist */
+.CrtArtImag{
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  border: solid rgb(65, 65, 65) 4px;
+
+}
+.CrtArtImagDiv{
+  display: flex;
+  justify-content: center;
+}
+.checkboxdivcrateartist{
+  display: flex;
+  padding-top: 10px;
+}
+.switch{
+  margin-left: 10px;
+}
+
+                     /* ?? toggle switch ?? */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height:18px;
+  width: 18px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+.CrtArtSubmButton{
+  height: 40px;
+  width: 100%;
+  border: none;
+  background-color: #4BB543;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: larger;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Edit product */
+.EditProImag{
+  width: 200px;
+  height: 250px;
+  border: solid rgb(65, 65, 65) 3px;
+}
+.editProSubmButton{
+  height: 40px;
+  width: 250px;
+  border: none;
+  background-color: #4BB543;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  
+}
+.editProSubmButtonDiv{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+/* singup page */
+.form-groupAS{
+	
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-groupAS label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-groupAS input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 18px;
+	width: 100%;
+  font-size: 15px;
+  border-radius: 8px;
+  border: solid rgb(116, 116, 116) 1px;
+}
+
+.form-groupAS input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-groupAS.success input {
+	border-color: #2ecc71;
+}
+
+.form-groupAS.error input {
+	border-color: #e74c3c;
+}
+
+.form-groupAS i {
+	visibility: hidden;
+	position: absolute;
+	top: 37px;
+	right: 10px;
+  
+}
+
+.form-groupAS.success i.glyphicon-ok-sign {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-groupAS.error i.glyphicon-info-sign{
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-groupAS small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-groupAS.error small {
+	visibility: visible;
+}
+
+/* // Create new admin // */
+.adSiBorder{
+ background-color: #f3f3f352;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ border-radius: 15px;
+ padding: 5px;
+ 
+}
+.adSiBorderdiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: auto;
+  align-items: center;
+}
+.adSiHeader{
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size:x-large;
+  font-weight: bold;
+  color: #007980;
+  padding-left: 2%;
+}
+.crSinButon{
+  width: 100%;
+  height: 35px;
+  border: none;
+  background-color: #02be50;
+  color: white;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/*..............................................................*/
+.form-groupAdS{
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-groupAdS label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-groupAdS input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-groupAdS input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-groupAdS.success input {
+	border-color: #2ecc71;
+}
+
+.form-groupAdS.error input {
+	border-color: #e74c3c;
+}
+
+.form-groupAdS i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form-groupAdS.success i.glyphicon-ok-sign {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-groupAdS.error i.glyphicon-info-sign{
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-groupAdS small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-groupAdS.error small {
+	visibility: visible;
+}
+
+/* user account */
+.Uaccountborder{
+  width: 100%;
+  height: auto;
+  padding-bottom: 7px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.2);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.headerbg{
+  width: 100%;
+  height: 150px;
+  background-color: darkslategray;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.profileimagediv{
+  display: flex;
+  justify-content: center;
+}
+.profileimage{
+  
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  margin-top: -105px;
+  
+  
+}
+.textHeaderName{
+  text-align: center;
+  margin-top: 8px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.textHeadrDescription{
+  text-align: center;
+  margin-top: -4px;
+  font-size: medium;
+  color: #535353;
+  margin-bottom: 20px;
+  
+}
+.accBodyAtage{
+  background-color: #ecffdb;
+  color: #405d27;
+  padding: 1rem;
+  padding-left: 2rem;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: solid #405d27 ;
+  border-width: 1px;
+  
+}
+.accBodyAtage:hover{
+  font-size: 17px;
+  color: #405d27;
+  text-decoration: none;
+}
+.accBodyAtage.active{
+  color: white;
+  background-color: #405d27;
+  font-size: 16px;
+  text-decoration: none;
+}
+.accBodyAtage:focus{
+  color: white;
+  background-color: #405d27;
+  font-size: 16px;
+  text-decoration: none;
+
+}
+.BodyCountent{
+  background-color: #d1e4c0 ;
+  width: 100%;
+  height: auto;
+}
+.BC1td1{
+  font-size: 2rem;
+  background-color: #002958;
+}
+.UbodyChpasDiv{
+  padding: 20px;
+  
+}
+.Uaccountborder2{
+  padding-top: 15px ;
+}
+.USAFooter{
+  height: 100px;
+  background-color: #007980;
+}
+
+
+/*..............................................................*/
+.useraccForm{
+	margin-bottom: 5px;
+	
+	position: relative;
+}
+
+.useraccForm label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.useraccForm input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.useraccForm input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.useraccForm.success input {
+	border-color: #2ecc71;
+}
+
+.useraccForm.error input {
+	border-color: #e74c3c;
+}
+
+.useraccForm i {
+	visibility: hidden; 
+	position: absolute;
+	top: 10px;
+	right: 25px;
+}
+
+.useraccForm.success i.glyphicon-ok-sign {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.useraccForm.error i.glyphicon-info-sign{
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.useraccForm small {
+	color: #e74c3c;
+	
+	bottom: 0;
+	left: 0;
+	  visibility: hidden;  
+}
+
+.useraccForm.error small {
+	visibility: visible;
+}
+
+/* .........................................................new. */ 
+
+.passaccForm{
+	margin-bottom: 5px;
+	
+	position: relative;
+}
+
+.passaccForm label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.passaccForm input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.passaccForm input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.passaccForm.success input {
+	border-color: #2ecc71;
+}
+
+.passaccForm.error input {
+	border-color: #e74c3c;
+}
+
+.passaccForm i {
+	visibility: hidden;
+	position: absolute;
+	top: 35px;
+	right: 10px;
+}
+
+.passaccForm.success i.glyphicon-ok-sign {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.passaccForm.error i.glyphicon-info-sign{
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.passaccForm small {
+	color: #e74c3c;
+	
+	bottom: 0;
+	left: 0;
+	 visibility: hidden; 
+}
+
+.passaccForm.error small {
+	visibility: visible;
+}
+
+/* artist account */
+.ArAcAccountBody {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.2);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.ArAcProfileBackground{
+  width: 100%;
+  height: 150px;
+  background-color: darkslategray;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.ArAcProfileImageDiv{
+  display: flex;
+  justify-content: center;
+}
+.ArAcProfileImage{
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  margin-top: -110px;
+  
+  
+}
+.ArAcProfileName{
+  text-align: center;
+  margin-top: 8px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.ArAcProfileDescrip{
+  text-align: center;
+  margin-top: -4px;
+  font-size: medium;
+  color: #535353;
+  margin-bottom: 20px;
+}
+.ArAcAccountNav{
+  display: flex;
+  justify-content: space-around;
+  border-top: solid rgb(212, 221, 188) 2px;
+  border-bottom: solid rgb(212, 221, 188) 2px;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+ 
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+  background-color: rgb(245, 245, 245);
+}
+
+.ArACNavItemButton{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  
+}
+
+.ArAcAccoundbody{
+  
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.ArAcBodyItemHeader{
+  color: #022853;
+  text-align: center;
+}
+
+
+
+.ArAcNavItem{
+  
+  color: #405d27; 
+  border-bottom: none;
+  text-decoration: none;
+  
+}
+.ArAcNavItem:hover{
+  
+  color: #405d27;
+  text-decoration: none;
+  border-bottom: solid rgb(172, 172, 172) 3px ;
+}
+.ArAcNavItem.active{
+  text-decoration: none;
+  border-bottom: solid #405d27 3px ;
+}
+.ArAcSettFormBody{
+  padding: 10px;
+}
+.ArAcSettFormImag{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: solid gray 1px;
+  
+}
+
+/* .................................settings  validation */
+.ArAcSettings{
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.ArAcSettings label {
+	margin-bottom: 5px;
+}
+
+.ArAcSettings input {
+	border: solid #b6b6b6 2px;
+	border-radius: 4px;
+
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.ArAcSettings textarea {
+	border: solid #b6b6b6 2px;
+	border-radius: 4px;
+
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+
+.ArAcSettings textarea:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.ArAcSettings.success textarea {
+	border-color: #2ecc71;
+}
+
+.ArAcSettings.error textarea {
+	border-color: #e74c3c;
+}
+
+.ArAcSettings input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.ArAcSettings.success input {
+	border-color: #2ecc71;
+}
+
+.ArAcSettings.error input {
+	border-color: #e74c3c;
+}
+
+.ArAcSettings i {
+	visibility: hidden; 
+	position: absolute;
+	top: 10px;
+	right: 25px;
+}
+
+.ArAcSettings.success i.glyphicon-ok-sign {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.ArAcSettings.error i.glyphicon-info-sign{
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.ArAcSettings small {
+	color: #e74c3c;
+	
+	bottom: 0;
+	left: 0;
+	  visibility: hidden;  
+}
+
+.ArAcSettings.error small {
+	visibility: visible;
+}
+
+
+/* ....................................change password validation */
+
+.ArAcPassword{
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.ArAcPassword label {
+	margin-bottom: 5px;
+}
+
+.ArAcPassword input {
+	border: solid #b6b6b6 2px;
+	border-radius: 4px;
+
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.ArAcPassword input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.ArAcPassword.ok input {
+	border-color: #2ecc71;
+}
+
+.ArAcPassword.notOk input {
+	border-color: #e74c3c;
+}
+
+.ArAcPassword i {
+	visibility: hidden; 
+	position: absolute;
+	top: 35px;
+	right: 15px;
+}
+
+.ArAcPassword.ok i.glyphicon-ok {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.ArAcPassword.notOk i.glyphicon-remove-sign{
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.ArAcPassword small {
+	color: #e74c3c;
+	
+	bottom: 0;
+	left: 0;
+	  visibility: hidden;  
+}
+
+.ArAcPassword.notOk small {
+	visibility: visible;
+}
+
+.changepasswordMessage{
+  
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  color: rgb(199, 0, 0);
+}
+.changemessageBorde{
+  background-color: rgb(255, 190, 190);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-left: solid rgb(199, 0, 0) 5px;
+}
+
+.changepasswordMessageSuccess{
+  
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  color: rgb(0, 199, 66);
+}
+.changemessageBordeSuccess{
+  background-color: rgb(208, 255, 190);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-left: solid rgb(23, 199, 0) 5px;
+}
+
+/* .................artist dashboard */
+ #sidebarartist{
+  min-width: 210px;
+  max-width: 210px;
+  background: darkslategray;
+  color: #fff;
+  transition: all 0.6s;
+}
+#sidebarartist.active {
+  margin-left: -210px;
+}
+
+
+.ArDssidbarprofile{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+.ArDssidbarprofileDiv{
+  display: flex;
+  justify-content: center;
+}
+.ArDssidebarName{
+  font-size: 17px;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.ArDssidbarStar{
+  margin-right: 10px;
+  margin-top: -8px;
+  
+}
+.ArDslist-group .ArDslist-group-item{
+  display: block;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.ArDslist-group .ArDslist-group-item:hover {
+  background-color: rgb(37, 66, 66);
+  color: white;
+  text-decoration: none;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+ .ArDslist-group-item:active {
+  background: rgb(21, 54, 54);
+  color: white;
+  text-decoration: none;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+.ArDslist-group-item:focus {
+  background: rgb(21, 54, 54);
+  color: white;
+  text-decoration: none;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.closebtn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+}
+.closebtn:hover{
+  color: rgb(212, 212, 212);
+  text-decoration: none;
+}
+
+
+.ArDssidenav {
+  margin-top: 15px;
+}
+
+/* .ArDssidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+} */
+.ArDshr{
+ width: 90%;
+ margin: auto;
+ margin-top: 14px;
+}
+
+.ArDswrapper {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: stretch;
+  margin-top: 20px;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* #ArDsSiadbarCounternd {
+  margin-left: 210px;                      Same as the width of the sidenav 
+  padding: 0px 10px;
+  margin-top: 10px;
+  
+} */
+
+
+ @media (min-width: 769px) {
+  .sidebarContent {
+      margin-left: 210px; 
+  }
+} 
+
+.sidebarcontentDiv{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 27px;
+}
+
+@media (max-width: 768px) {
+  #sidebarartist {
+      margin-left: -210px;
+  }
+  #sidebarartist.active {
+      margin-left: 0;
+  }
+}
+
+.ArDsSidebarbuttonD{
+  
+  display: flex;
+
+}
+
+#ArDssidebarButton{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: darkslategray;
+  color: white;
+  border: none;
+  position: fixed;
+  margin-left: -28px;
+  margin-top: 22px;
+  
+}
+.sidebarbuttonIcon{
+ margin-right: -20px;
+}
+
+.ArDsTablecontend{
+  padding-top: 20px;
+}
+
+/* Artist Product List */
+
+/*..................................... badge create */
+.Pending{
+  background-color: rgb(126, 126, 126);
+  color: white;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-size: 13px;
+}
+.Confiemed{
+  background-color: rgb(0, 202, 67);
+  color: white;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-size: 13px;
+}
+.Edited{
+  background-color: dodgerblue;
+  color: white;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-size: 13px;
+}
+.Not-Approve{
+  background-color: rgb(206, 15, 2);
+  color: white;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-size: 13px;
+}
+
+.Placed{
+  background-color: rgb(250, 91, 91);
+  color: white;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-size: 13px;
+}
+  .Processed{
+  background-color: rgb(0, 117, 172);
+  color: white;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 50px;
+  font-size: 13px;
+  }
+  .Shipped{
+    background-color: rgb(212, 0, 106);
+    color: white;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50px;
+    font-size: 13px;
+  }
+  .Delivered{
+    background-color: rgb(252, 172, 0);
+    color: rgb(0, 0, 0);
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50px;
+    font-size: 13px;
+  }
+  .Rejected{
+    background-color: rgb(206, 15, 2);
+    color: white;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50px;
+    font-size: 13px;
+  }
+
+/* view artist product */
+.VeArPrborder{
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.2);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.VeArPrheader{
+  font-size: 22px;
+  color: #023875;
+}
+.VeArPrProductImage{
+  width: 350px;
+  height: 350px;
+  margin-right: 5px;
+  border-radius: 10px;
+  border: solid rgb(151, 151, 151) 1px;
+
+
+}
+.VeArPrProductImageDiv{
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.VeArPrProductImageDiv::-webkit-scrollbar{
+  display: none;
+}
+.VeArPrScrollButton{
+  border: none;
+  background-color: #e4e4e4;
+  opacity:0.5;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-size: 30px;
+  color: #000000; 
+
+}
+.VeArPsScrollButtonDiv{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-top: -210px;
+
+}
+.VeArPrContent{
+  margin-top: 170px;
+}
+.VeArPrheader2{
+  font-size: 16px;
+  margin: 0;
+  margin-top: 8px;
+  padding: 0;
+}
+.VeArPrheader2 i {
+  color: #b3b3b3;
+}
+.VeArPrtext1{
+  font-size: 24px;
+  color: #aa0000;
+  margin-top: -5px;
+}
+.VeArPrContentDiv{
+ display: flex;
+ flex-wrap: wrap;
+
+}
+.VeArPrHr1{
+  margin-top: auto;
+}
+.veArPrArtistImage{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: inline;
+  margin-top: -25px;
+}
+.VaArPrSecond{
+  width: 50%;
+  margin-top: 35px;
+  
+}
+.VaArPrFirst{
+  width: 50%;
+  
+}
+@media   (max-width: 769px){
+  .VaArPrSecond{
+    width: 100%;
+  }
+  .VaArPrFirst{
+    width: 100%;
+    border-bottom: solid rgb(143, 143, 143) 1px;
+  }
+}
+.VaArPrArtistname{
+  font-size: 22px;
+  display: inline;
+  color: #363636;
+  margin-top: auto;
+  margin-left: 10px;
+
+}
+.notvalidcontact{
+  display: flex;
+  justify-content: center;
+}
+
+/*  artist product admin edit page */
+
+.ArPrEdContent{
+  padding-top: 20px;
+}
+.EdArPrDescrptionShow{
+  width: auto;
+  height: 150px;
+  border: solid rgb(187, 187, 187) 1.5px;
+  border-radius: 5px;
+  background-color: rgb(228, 228, 228);
+  padding: 10px;
+  overflow: auto;
+  
+}
+
+/* view artist profile in admin panel */
+
+.ArtistProfileAdmin{
+  width: 100%;
+  height: 150px;
+  background-color: rgb(143, 109, 0);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.allartistImageIcon{
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+
+
+/* home page - view product page - For Sales */
+
+.VPSmySlidesDiv{
+  padding-top: 10px;
+  position: fixed;
+ 
+}
+.VPSborder{
+  background-color: #ffffff;
+  margin-top: 60px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.5);
+  padding: 30px;
+}
+.VPSmySlidemainImageDiv{
+  padding: 10px;
+ 
+  width: 100%;
+}
+
+.mySlides {
+  display: none;
+  border: solid rgb(56, 56, 56) 1px;
+}
+.numbertext {
+  color: #494949;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+}
+.VPSSlidermainImage{
+  width: 100%;
+  vertical-align: middle;
+}
+.prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        padding: 16px;
+        margin-top: -50px;
+        color: rgb(51, 51, 51);
+        font-weight: bold;
+        font-size: 24px;
+        
+        
+    }
+    .next {
+      right: 25px;
+      border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover,
+  .next:hover {
+      background-color: rgba(54, 54, 54, 0.3);
+      color: black;
+      border-radius: 100px; 
+  }
+  .addtoCartDiv{
+    display: flex;
+    justify-content: center;
+  }
+  .addtoCartButton{
+    width: 450px;
+    height: 55px;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #068c96;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.5);
+  }
+  .addtoCartButton:hover{
+    background-color: #057c85;
+    box-shadow: none;
+  }
+  .addtoCartButton:active{
+    background-color: #04484d;
+    box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.5);
+  }
+
+  .VPSproductName{
+    font-size: 26px;
+    color: rgb(0, 138, 138);
+  }
+  .VPSprice{
+    margin-top: -2px;
+    color: rgb(218, 0, 29);
+    font-size: 28px;
+    display: inline;
+    
+  }
+  .VPSpriceLoss{
+    font-size: 18px ;
+    color: rgb(179, 179, 179);
+    text-decoration: line-through;
+    display: inline;
+    margin-left: 10px;
+  }
+  .VPSoffer{
+    color: green;
+    font-size: 19px;
+    display: inline;
+    margin-left: 10px;
+  }
+  .VPSinfo{
+    margin-left: 5px;
+    font-size: 14px;
+    color: rgb(116, 116, 116);
+  }
+  .VPSartitProfile{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: inline;
+  }
+  .VPSartistName{
+    display: inline;
+    color: rgb(77, 77, 77);
+    font-size: larger;
+    position: absolute;
+    font-size: 18px;
+  }
+  .VPSartistDiv{
+    margin-top: 15px;
+    background-color: #e7e7e7;
+    border-radius: 100px;
+    padding: 5px;
+    width:inherit;
+    
+    
+  }
+  .VPSartistNameDiv{
+    display: inline;
+  
+    margin-left: 10px;
+    margin-top: -5px;
+    
+  }
+
+  .VPSartistDetails{
+    display: inline;
+    position: absolute;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .VPSbadge{
+    display: inline;
+    background-color: green;
+    color: white;
+    font-size: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 100px;
+    position: absolute;
+    width: 70px;
+    margin-left: 10px;
+    text-align: center;
+  }
+  .VPSdetails{
+    font-size: 22px;
+  }
+ .cart-item-count{
+   color: white;
+   background-color: rgb(121, 121, 121);
+   border: none;
+   border-radius: 5px;
+   width: 30px;
+   font-size: 18px;
+   margin-left: 10px;
+   margin-right: 10px;
+
+ }

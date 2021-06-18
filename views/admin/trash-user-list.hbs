@@ -1,0 +1,56 @@
+<section class="">
+    <div class="allProductSection container ">
+        <div class=" ">
+            <div class="">
+                <h2 class="text-center  allproductsheader"> Users trash list</h2>
+
+                <table class="table " id="productTable">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            
+                            <th scope="col">Image</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email Id</th>
+                            <th scope="col">Place</th>
+                            <th scope="col">User Id</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each trashUser}}
+                        <tr>
+                           
+                            <td><img style="width: 35px; hight:35px; border-radius: 100%; "
+                                    src="/trash-user-images/{{this._id}}.jpg" alt="User-image"
+                                    onerror="this.onerror=null;callfun(this);"></td>
+                            <td>{{this.FirstName}} {{this.LastName}}</td>
+                            <td>{{this.EmailId}}</td>
+                            <td>{{this.Area}}</td>
+                            <td>{{this.UrId}}</td>
+
+                        </tr>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>

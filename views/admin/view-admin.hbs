@@ -1,0 +1,304 @@
+<section class="">
+    <div class="" style="background: rgb(240, 240, 240);">
+        <div class="container">
+            <div class="ArAcAccountBody ">
+                <div class="ArAcProfileBody ">
+                    <div class="ArAcProfileBackground">
+                    </div>
+                    <div class="ArAcProfileImageDiv">
+                        <img class="ArAcProfileImage" src="/images/6241267.png" alt="artist profile">
+                    </div>
+                    <h1 class="ArAcProfileName">{{adminData.adminFirstName}} {{adminData.adminLastName}}</h1>
+                    <h3 class="ArAcProfileDescrip"><span class="glyphicon glyphicon-envelope"></span>
+                        {{adminData.adminEmailId}}
+
+                    </h3>
+                </div>
+                {{!-- nav buttons --}}
+                <div class="sticky">
+                    <div class="ArAcAccountNav  nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                        <a class="ArAcNavItem active  " id="v-pills-details-tab" data-toggle="pill"
+                            href="#v-pills-details" role="tab" aria-controls="v-pills-details"
+                            aria-selected="true"><button class="ArACNavItemButton">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                                </svg>
+                                <span class="d-none d-sm-none d-md-inline"> Details</span>
+                            </button> </a>
+
+                        <a class="ArAcNavItem " id="v-pills-favorites-tab" data-toggle="pill" href="#v-pills-favorites"
+                            role="tab" aria-controls="v-pills-favorites" aria-selected="false"><button
+                                class="ArACNavItemButton "> <span class="glyphicon glyphicon-cog"></span><span
+                                    class="d-none d-sm-none d-md-inline"> Edit</span> </button></a>
+
+                        
+
+
+
+                    </div>
+                </div>
+                <div class="ArAcAccoundbody">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        {{!-- Details --}}
+                        <div class=" tab-pane active" id="v-pills-details" role="tabpanel"
+                            aria-labelledby="v-pills-details-tab">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">User name </th>
+                                        <th scope="col">: {{adminData.adminUserName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">First name </th>
+                                        <th scope="col">: {{adminData.adminFirstName}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Last name </th>
+                                        <th scope="col">: {{adminData.adminLastName}}</th>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Ad ID </th>
+                                        <th scope="col">: {{adminData._id}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Email address </th>
+                                        <th scope="col">: {{adminData.adminEmailId}}</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        {{!-- edit --}}
+                        <div class=" tab-pane fade" id="v-pills-favorites" role="tabpanel"
+                            aria-labelledby="v-pills-favorites-tab">
+
+                            <form action="/admin/settings/profile/edit/{{adminData._id}}" method="POST"
+                                onsubmit="return checkaInput()" enctype="multipart/form-data" id="artistSettingsform">
+                                <div class="ArAcSettFormBody">
+                                    <h4 class="ArAcBodyItemHeader"><i class="bi bi-pencil-square"></i> Edit Profile</h4>
+
+
+
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">Admin Id</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{adminData._id}}" readonly>
+
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">First name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{adminData.adminFirstName}}"
+                                                name="FirstName" id="firstname">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">Last name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{adminData.adminLastName}}"
+                                                name="LastName" id="lastname">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings  row">
+                                        <label class="col-sm-2 col-form-label">User name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{adminData.adminUserName}}"
+                                                name="UserName" id="username">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Email Id</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" value="{{adminData.adminEmailId}}"
+                                                name="EmailId">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Password 1</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control"  maxlength="12" minlength="6" placeholder="Password 1"
+                                                name="Password1">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+                                    <div class="ArAcSettings row">
+                                        <label class="col-sm-2 col-form-label">Password 2</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control"  maxlength="12" minlength="6" placeholder="Password 2"
+                                                name="Password2">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                            <i class="glyphicon glyphicon-ok-sign "></i>
+                                            <small>Error massage</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="ArAcSettFormBody">
+
+                                    <div class="useraccForm">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <script>
+    function Check(){
+        if (document.getElementById('option1').checked){
+            document.getElementById('div1').style.display = 'block';
+            document.getElementById('div2').style.display = 'none';
+        }else if(document.getElementById('option2').checked){
+           document.getElementById('div1').style.display = 'none'; 
+           document.getElementById('div2').style.display = 'block'; 
+         }else if(document.getElementById('option3').checked){
+           document.getElementById('div1').style.display = 'block'; 
+           document.getElementById('div2').style.display = 'block'; 
+        }
+    }
+    </script>
+
+
+<script>
+    var header = document.getElementById("v-pills-tab");
+    var btns = header.getElementsByClassName("ArAcNavItem");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+
+</script>
+
+<script>
+
+    const form = document.getElementById('artistSettingsform');
+    const firstname = document.getElementById('firstname');
+    const lastname = document.getElementById('lastname');
+    const username = document.getElementById('username');
+
+
+
+
+    function checkaInput() {
+
+        const firstnameValue = firstname.value;
+        const lastnameValue = lastname.value;
+        const usernameValue = username.value;
+
+        if (firstnameValue === '') {
+            setErrorFor(firstname, 'Enter Fist name');
+            return false;
+        } else if (!isNaN(firstnameValue)) {
+            setErrorFor(firstname, 'Enter letters only')
+            return false;
+        } else {
+            setSuccessFor(firstname);
+        }
+
+        if (lastnameValue === '') {
+            setErrorFor(lastname, 'Enter Last name');
+            return false;
+        } else if (!isNaN(lastnameValue)) {
+            setErrorFor(lastname, 'Enter letters only')
+            return false;
+        } else {
+            setSuccessFor(lastname);
+        }
+
+        if (usernameValue === '') {
+            setErrorFor(username, 'Enter User name');
+            return false;
+        } else {
+            setSuccessFor(username);
+        }
+
+
+    }
+
+    function setErrorFor(input, message) {
+        const ArAcSettings = input.parentElement;
+        const small = ArAcSettings.querySelector('small');
+        ArAcSettings.className = 'ArAcSettings error';
+        small.innerText = message;
+    }
+
+    function setSuccessFor(input) {
+        const ArAcSettings = input.parentElement;
+        ArAcSettings.className = 'ArAcSettings success';
+    }
+</script>
+
+
+<script>
+    const forms = document.getElementById('ArAcpasswordForm');
+    const password11 = document.getElementById('password11');
+    const password12 = document.getElementById('password12');
+
+    function checkNewpassword() {
+
+        const password11Value = password11.value;
+        const password12Value = password12.value;
+
+
+
+        if (password11Value === '') {
+            setErrorForr(password11, 'Enter New password');
+            return false;
+        } else {
+            setSuccessForr(password11);
+        }
+
+        if (password12Value === '') {
+            setErrorForr(password12, 'Enter confiem password');
+            return false;
+        } else if (password11Value !== password12Value) {
+            setErrorForr(password12, 'Passwords does not match');
+            return false;
+        } else {
+            setSuccessForr(password12);
+        }
+
+
+    }
+
+    function setErrorForr(input, message) {
+        const ArAcPassword = input.parentElement;
+        const small = ArAcPassword.querySelector('small');
+        ArAcPassword.className = 'ArAcPassword notOk';
+        small.innerText = message;
+    }
+
+    function setSuccessForr(input) {
+        const ArAcPassword = input.parentElement;
+        ArAcPassword.className = 'ArAcPassword ok';
+    }
+</script>

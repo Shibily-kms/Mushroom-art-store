@@ -1,0 +1,159 @@
+<section class="pt-5">
+    <div class=''>
+        <div class="container">
+            <div>
+                <div>
+                    <h4 class="SCheading">Hi {{user.UserName}}, this your shopping cart</h4>
+                </div>
+                <hr>
+                <div style="" class="col-md-8 col-sm-12 ">
+
+                    <div class="SCmainDiv">
+                        
+                        {{#each products}}
+                        <div class="SCcartItemDiv">
+                            <div class="SCcartImageDiv col-md-3 col-sm-3  ">
+                                <img class="SCcartItemImage" src="/products-images/{{this.product._id}}m-art.jpg"
+                                    alt="Cart Product Image">
+                            </div>
+                            <div class="pt-5 d-block d-sm-none ">
+
+                            </div>
+                            <div class="SCitemDetailsDiv col-md-9 col-sm-9">
+                                <div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h2 class="SCitemName">{{this.product.ProductName}}</h2>
+                                            <h2 class="SCitemid">PrID : {{this.product.PrId}}</h2>
+                                          
+                                            <h2 class="SCitemid">{{this.product.Category}}</h2>
+                                            
+                                            <h2 class="SCitemid">Details</h2>
+                                            <h2 class="SCitemid">Details</h2>
+                                            <input type="text" value="{{this.Product.Category}}"
+                                                onchange=" qundityShow()" id="inputCategory" hidden>
+                                        </div>
+                                        <div>
+                                           
+                                            <div
+                                                class="SCItemNumberDiv def-number-input number-input safari_only mb-0 w-100 ">
+                                                <button class="SCitemMinus"  onclick="changeQuandity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)" ><i class="bi bi-dash-lg"></i></button>
+                                                <span class="SCitemNumber" id="{{this.product._id}}">{{this.quantity}}</span>
+                                                <button class="SCitemPlus"  onclick="changeQuandity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)" ><i class="bi bi-plus-lg"></i></button>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <button type="button" class="SCromoveButton"  onclick="removeQuandity('{{this._id}}','{{this.product._id}}','{{../user._id}}')"><i
+                                                    class="bi bi-trash-fill"></i> Remove item </button>
+                                            <button type="button" class="SCromoveButton"><i
+                                                    class="bi bi-heart-fill"></i> Move to wish list </button>
+                                        </div>
+                                        <p class="mb-0"><span><strong>₹{{this.product.Price}}</strong></span></p
+                                            class="mb-0">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <hr class="mb-4">
+                            </div>
+                        </div>
+                        {{/each}}
+
+                    </div>
+
+                </div>
+
+                <div class="SCtotalDiv col-md-4 col-sm-12">
+                    <div>
+                        <h4 class="SCtotalHeader">The total amount of</h4>
+
+                         {{#each products}}
+                        <div class="SCtotalItemDiv">
+                            <p class="SCtotalItem">{{this.product.ProductName}}</p>
+                            <p class="SCtotalItem">₹{{this.product.Price}} x <span id="{{this.product._id}}A">{{this.quantity}}</span></p>
+                        </div>
+                        {{/each}}
+
+                        <hr>
+                        <div class="SCtotalItemDiv">
+                            <p class="SCtotal">The total amount of</p>
+                            <p class="SCtotal">₹<span id="total">{{totalValue}}</span></p>
+                        </div>
+                        <div class="SCtotalButtonDiv">
+
+                            <a href="/place-order" class="SCtotalbutton">Place order</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+        function changeQuandity(cartId, proId, userId, count) {
+            let quantity = parseInt(document.getElementById(proId).innerHTML)
+            count = parseInt(count)
+            console.log('userid', userId)
+            $.ajax({
+                url: '/change-product-quandity',
+                data: {
+                    user: userId,
+                    cart: cartId,
+                    product: proId,
+                    count: count,
+                    quantity: quantity
+                },
+                method: 'post',
+                success: (respon) => {
+                    if (respon.removeProduct) {
+                        alert('Product Romoved from cart')
+                        location.reload()
+                    } else if (respon.status){
+                        document.getElementById(proId).innerHTML = quantity + count
+                        document.getElementById(proId+'A').innerHTML = quantity + count
+                        document.getElementById('total').innerHTML = respon .total
+                        
+                    } else{
+                        alert('Product Romoved from cart')
+                        location.reload()
+                    }
+                }
+            })
+        }
+</script>
+
+<script>
+     function removeQuandity(cartId, proId, userId) {
+            
+            $.ajax({
+                url: '/remove-product-quandity',
+                data: {
+                    user: userId,
+                    cart: cartId,
+                    product: proId,
+                },
+                method: 'post',
+                success: (response) => {
+                    if (response.removeProduct) {
+                        alert('Product Romoved from cart')
+                        location.reload()
+                    }else{
+                        alert('Product Romoved from cart')
+                        location.reload()
+                    } 
+                }
+            })
+        }
+</script>
+

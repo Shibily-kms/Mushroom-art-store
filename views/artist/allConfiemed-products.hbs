@@ -1,0 +1,59 @@
+<section>
+    <div class="sidebarContent">
+        <div class="sidebarcontentDiv">
+            <div class="pt-4">
+                <h4 class="ArAcBodyItemHeader "><i  class="bi bi-check-circle"></i> Confiemed Products List  </h4>
+                 <div class="mt-4">
+                   
+                </div>
+                    <table class="table " id="productTable" style="100%">
+                        <thead class="bg-dark text-light">
+                            <tr>
+                              
+                                <th scope="col">Image</th>
+                                <th scope="col">Product Id</th>
+                                <th scope="col">Product title</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each products}}
+                            <tr>
+                                
+                                <td><a href="/artist/dashboard/confimed-products/{{this._id}}"><img style="width: 40px; hight:40px;" data-toggle="tooltip" data-placement="bottom" title="View Product Details"
+                                            src="/products-images/{{this._id}}m-art.jpg" alt="image" onerror="this.onerror=null;callfun(this);"></a></td>
+                                <td>{{this.PrId}}</td>
+                                <td>{{this.ProductName}}</td>
+                                <td >{{this.Category}} </td>
+                                
+                                <td>
+                                    <a href="/artist/dashboard/confimed-products/delete/{{this._id}}" class="btn btn-danger" title="Detete product"
+                                        onclick="return confirm('Are you want to delete {{this.ProductName}} ?')"><span
+                                            class="glyphicon glyphicon-remove"></span></a>
+                                </td>
+                                {{/each}}
+                            </tr>
+
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>

@@ -1,0 +1,58 @@
+<section class="">
+  <div class="allProductSection container ">
+    <div class=" ">
+      <div class="">
+        <h2 class="text-center  allproductsheader"> Artist trash list</h2>
+        <div>
+       
+      </div>
+       
+        
+        <table class="table " id="productTable">
+          <thead class="bg-dark text-light">
+            <tr>
+            
+              <th scope="col">Photo</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Ar Id</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Rating (<span style="color: rgb(255, 196, 0);" ><i class="bi bi-star-fill"></i></span>5)</th>
+              
+            </tr>
+          </thead>
+          
+          <tbody>
+            {{#each trashArtist}}
+            <tr>
+             
+              <td><img class="allartistImageIcon"  src="/trash-artist-images/{{this._id}}.jpg" alt="artist-image" onerror="this.onerror=null;callfun(this);"></td>
+              <td>{{this.FirstName}} {{this.LastName}}</td>
+              <td>{{this.ArId}}</td>
+              <td>{{this.EmailId}}</td>
+              <td><span style="color: rgb(255, 196, 0);" ><i class="bi bi-star-fill"></i></span> {{this.starRate}}</td>
+              
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+
+    function callfun(obj) {
+        var noimg = "/images/user icon.png";
+        obj.src = noimg;
+    }
+
+</script>
+
+<script>
+ 
+  $ (function () {
+    $('#productTable').DataTable();
+} );
+</script>

@@ -1,0 +1,293 @@
+<section class="pt-5">
+    <div class="container">
+        <div class="VPSborder">
+            <div class=" VPSmySlidesDiv col-md-6 col-sm-12">
+                <div class="">
+                    <div class="VPSmySlidemainImageDiv">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 6</div>
+                            <img class="VPSSlidermainImage" src="/products-images/60b5175fadcd583230e722cam-art.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 6</div>
+                            <img class="VPSSlidermainImage" src="/products-images/60b5176fadcd583230e722cbm-art.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 6</div>
+                            <img class="VPSSlidermainImage" src="/products-images/60b71dfdfb75ec277c469bbcm-art.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 6</div>
+                            <img class="VPSSlidermainImage" src="/products-images/60b518fb51e11909d897d526m-art.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 6</div>
+                            <img class="VPSSlidermainImage" src="/products-images/60b8afebf356bc1f3c1df353m-art.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">6 / 6</div>
+                            <img class="VPSSlidermainImage" src="/products-images/60b5175fadcd583230e722cam-art.jpg">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)"><i class="bi bi-chevron-left"></i></a>
+                        <a class="next" onclick="plusSlides(1)"><i class="bi bi-chevron-right"></i></a>
+
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <img class="demo cursor" src="/products-images/60b5175fadcd583230e722cam-art.jpg"
+                                style="width:100%" onclick="currentSlide(1)" alt="Product Image">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="/products-images/60b5176fadcd583230e722cbm-art.jpg"
+                                style="width:100%" onclick="currentSlide(2)" alt="Product Image">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="/products-images/60b71dfdfb75ec277c469bbcm-art.jpg"
+                                style="width:100%" onclick="currentSlide(3)" alt="Product Image">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="/products-images/60b518fb51e11909d897d526m-art.jpg"
+                                style="width:100%" onclick="currentSlide(4)" alt="Product Image">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="/products-images/60b8afebf356bc1f3c1df353m-art.jpg"
+                                style="width:100%" onclick="currentSlide(5)" alt="Product Image">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="/products-images/60b5175fadcd583230e722cam-art.jpg"
+                                style="width:100%" onclick="currentSlide(6)" alt="Product Image">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {{#if ForSales }}
+                        <div class="addtoCartDiv">
+                            <a href="/{{Product.Category}}/add-to-cart/{{Product._id}}"><button
+                                    class="addtoCartButton"><i class="bi bi-bag-plus-fill"></i> ADD TO
+                                    CART</button></a>
+                        </div>
+                        {{else}}
+                        <div class="addtoCartDiv">
+                            <a href="/{{Product.Category}}/view-item/{{Product._id}}/choose-image"><button
+                                    class="addtoCartButton"><i class="bi bi-image"></i> CHOOSE IMAGE</button></a>
+                        </div>
+                        {{/if}}
+                    </div>
+
+
+                    <div class="row">
+                        <div class="addtoCartDiv">
+                            <div class="artistViewProductStarborderDIv">
+                                <h4 class="text-center">Add artist rating</h4>
+                                <div class="addtoCartDiv">
+                                    <div class="ArtistViewStarrate">
+                                        <input type="radio" id="star5" name="ArtistViewStarrate"
+                                            alt="{{Artist._id}}" title="{{user._id}}" value='5'  />
+                                        <label for="star5" title="text" class="new">5 stars</label>
+                                        <input type="radio" id="star4" name="ArtistViewStarrate" 
+                                            alt="{{Artist._id}}" title="{{user._id}}" value='4' />
+                                        <label for="star4" title="text" >4 stars</label>
+                                        <input type="radio" id="star3" name="ArtistViewStarrate" 
+                                            alt="{{Artist._id}}" title="{{user._id}}" value='3'  />
+                                        <label for="star3" title="text"  >3 stars</label>
+                                        <input type="radio" id="star2" name="ArtistViewStarrate"
+                                            alt="{{Artist._id}}" title="{{user._id}}" value='2' />
+                                        <label for="star2" title="text">2 stars</label>
+                                        <input type="radio" id="star1" name="ArtistViewStarrate"
+                                            alt="{{Artist._id}}" title="{{user._id}}" value='1' />
+                                        <label for="star1" title="text">1 star</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="VPSborder2">
+                    <div>
+                        <h2 class="VPSproductName">{{Product.ProductName}}</h2>
+                        <div>
+                            <h2 class="VPSprice">₹{{Product.Price}}</h2>
+                            <h4 class="VPSpriceLoss">₹{{Product.Price}}</h4>
+                            <h4 class="VPSoffer">25% off</h4>
+                            <span class="VPSinfo"><i class="bi bi-info-circle"></i></span>
+                            <div class="VPSartistDiv">
+                                <img class="VPSartitProfile" src="/artist-images/{{Artist._id}}.jpg"
+                                    alt="Artist Profile">
+                                <div class="VPSartistNameDiv">
+                                    <h4 class="VPSartistName">{{Artist.FirstName}}_{{Artist.LastName}} <span
+                                            class="VPSbadge "><i class="bi bi-star"></i> {{starRate}}/5</span></h4><br>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <h4 class="VPSdetails">Details</h4>
+                        <p>{{Product.Description}}It is a long established fact that a reader will be distracted by
+                            the
+                            readable content of a
+                            page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                            more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                            here', making it look like readable English. Many desktop publishing packages and web
+                            page
+                            editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                            will
+                            uncover many web sites still in their infancy. Various versions have evolved over the
+                            years,
+                            sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+                        <hr>
+                        <h4 class="VPSdetails">Description</h4>
+                        <p>{{Product.Description}}It is a long established fact that a reader will be distracted by
+                            the
+                            readable content of a
+                            page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                            more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                            here', making it look like readable English. Many desktop publishing packages and web
+                            page
+                            editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                            will
+                            uncover many web sites still in their infancy. Various versions have evolved over the
+                            years,
+                            sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of
+                            a
+                            page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                            more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                            here', making it look like readable English. Many desktop publishing packages and web
+                            page
+                            editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                            will
+                            uncover many web sites still in their infancy. Various versions have evolved over the
+                            years,
+                            sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="">
+
+                    <h6 class="text-center text-success">Mushroom art Store</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<style>
+    /* Slider image Styles */
+    .cursor {
+        cursor: pointer;
+    }
+
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+
+<script>
+
+    $(document).ready(function () {
+        // Check Radio-box
+        $(".ArtistViewStarrate input:radio").attr("checked", false);
+
+        $('.ArtistViewStarrate input').click(function () {
+            $(".ArtistViewStarrate span").removeClass('checked');
+            $(this).parent().addClass('checked');
+        });
+
+        $('input:radio').change(
+            function () {
+                var userRating = this.value;
+                var createrId = this.alt;
+                var userId = this.title;
+
+                
+
+                $.ajax({
+                    url: '/artistStar',
+                    data: {
+                        star: userRating,
+                        createrId: createrId,
+                        userId: userId
+                    },
+                    method: 'post',
+                    success: (respon) => {
+                        console.log(respon);
+                    }
+                })
+           
+            }
+        );
+    });
+
+</script>
