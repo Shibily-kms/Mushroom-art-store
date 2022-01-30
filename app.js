@@ -10,7 +10,7 @@ var artistRouter = require('./routes/artist');
 
 var hbs=require('express-handlebars');
 var app = express();
-var fileUpload=require('express-fileUpload')
+//var fileUpload=require('express-fileUpload')
 var db=require('./config/connection');
 var session=require('express-session')
 // view engine setup
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(fileUpload())
+//app.use(fileUpload())
 app.use(session({
   secret:"key",
   cookie:{maxAge: 182 * 24 * 60 * 60 * 1000}
